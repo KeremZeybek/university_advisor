@@ -1,0 +1,168 @@
+{
+    "university": "Sabancı University",
+    "type": "Minor Programs",
+    "faculties": [
+      {
+        "name": "Faculty of Engineering and Natural Sciences",
+        "short_code": "FENS",
+        "programs": [
+          {
+            "id": "energy",
+            "name": "Energy",
+            "subject_codes": ["ENRG", "ENS", "ME", "EE", "CHEM"],
+            "keywords": [
+              "renewable energy", "sustainability", "power systems", "solar", 
+              "wind", "thermodynamics", "fuel cells", "climate", "grid"
+            ]
+          },
+          {
+            "id": "physics",
+            "name": "Physics",
+            "subject_codes": ["PHYS", "NS", "MATH"],
+            "keywords": [
+              "quantum mechanics", "astrophysics", "relativity", "matter", 
+              "optics", "particles", "theoretical physics", "universe", "laser"
+            ]
+          },
+          {
+            "id": "mathematics",
+            "name": "Mathematics",
+            "subject_codes": ["MATH"],
+            "keywords": [
+              "calculus", "algebra", "topology", "number theory", "logic", 
+              "geometry", "proofs", "analysis", "differential equations"
+            ]
+          },
+          {
+            "id": "chemistry",
+            "name": "Chemistry",
+            "subject_codes": ["CHEM", "NS", "MAT"],
+            "keywords": [
+              "organic", "inorganic", "synthesis", "molecular", "reaction", 
+              "polymers", "atoms", "laboratory", "compounds"
+            ]
+          },
+          {
+            "id": "battery-science-engineering",
+            "name": "Battery Science and Engineering",
+            "subject_codes": ["MAT", "CHEM", "ENS", "EE"],
+            "keywords": [
+              "energy storage", "lithium-ion", "electric vehicles", "ev", 
+              "electrochemistry", "materials", "cathode", "anode", "charging"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Faculty of Arts and Social Sciences",
+        "short_code": "FASS",
+        "programs": [
+          {
+            "id": "philosophy",
+            "name": "Philosophy",
+            "subject_codes": ["PHIL", "HUM", "SPS"],
+            "keywords": [
+              "ethics", "logic", "epistemology", "metaphysics", "reasoning", 
+              "history of thought", "moral", "political philosophy", "existence"
+            ]
+          },
+          {
+            "id": "art-theory-criticism",
+            "name": "Art Theory and Criticism",
+            "subject_codes": ["VA", "HART", "HUM"],
+            "keywords": [
+              "aesthetics", "art history", "curating", "modern art", "visual culture", 
+              "museum studies", "criticism", "contemporary art"
+            ]
+          },
+          {
+            "id": "gender-womens-studies",
+            "name": "Gender and Women's Studies",
+            "subject_codes": ["GEN", "SOC", "CULT", "HUM"],
+            "keywords": [
+              "feminism", "identity", "equality", "sociology", "queer theory", 
+              "human rights", "representation", "social justice", "sexuality"
+            ]
+          },
+          {
+            "id": "decision-behavior",
+            "name": "Decision and Behavior",
+            "subject_codes": ["PSY", "ECON", "MGMT"],
+            "keywords": [
+              "game theory", "behavioral economics", "psychology", "choice", 
+              "risk management", "neuroscience", "cognition", "strategy"
+            ]
+          },
+          {
+            "id": "conflict-analysis-resolution",
+            "name": "Conflict Analysis and Resolution",
+            "subject_codes": ["CONF", "IR", "POLS", "PSY"],
+            "keywords": [
+              "negotiation", "peace studies", "diplomacy", "mediation", 
+              "violence", "resolution", "international law", "reconciliation"
+            ]
+          },
+          {
+            "id": "international-studies",
+            "name": "International Studies",
+            "subject_codes": ["IR", "POLS", "HIST", "ECON"],
+            "keywords": [
+              "global affairs", "foreign policy", "diplomacy", "globalization", 
+              "security", "international law", "un", "geopolitics"
+            ]
+          },
+          {
+            "id": "society-culture-politics",
+            "name": "Society, Culture and Politics",
+            "subject_codes": ["SOC", "CULT", "POLS", "ANTH"],
+            "keywords": [
+              "sociology", "anthropology", "culture", "ideology", "urban studies", 
+              "social theory", "migration", "identity politics", "class"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Sabancı Business School",
+        "short_code": "SBS",
+        "programs": [
+          {
+            "id": "finance",
+            "name": "Finance",
+            "subject_codes": ["FIN", "ECON", "MGMT"],
+            "keywords": [
+              "investment", "banking", "asset management", "stock market", 
+              "corporate finance", "valuation", "portfolio", "risk", "capital"
+            ]
+          },
+          {
+            "id": "entrepreneurship",
+            "name": "Entrepreneurship",
+            "subject_codes": ["ENT", "MGMT", "ORG"],
+            "keywords": [
+              "startup", "innovation", "business plan", "venture capital", 
+              "incubation", "strategy", "leadership", "design thinking"
+            ]
+          },
+          {
+            "id": "business-analytics",
+            "name": "Business Analytics",
+            "subject_codes": ["BAN", "OPIM", "DSA", "MGMT"],
+            "keywords": [
+              "big data", "data mining", "decision support", "statistics", 
+              "predictive modeling", "business intelligence", "optimization"
+            ]
+          },
+          {
+            "id": "sustainability",
+            "name": "Sustainability",
+            "subject_codes": ["SUS", "ENS", "BIO", "ECON", "MGMT"],
+            "keywords": [
+              "climate change", "environment", "green economy", "sdg", "ecology", 
+              "carbon footprint", "circular economy", "resources", "ethics"
+            ]
+          }
+        ]
+      }
+    ]
+  }

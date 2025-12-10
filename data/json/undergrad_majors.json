@@ -1,0 +1,144 @@
+{
+    "university": "Sabancı University",
+    "type": "Major Programs",
+    "faculties": [
+      {
+        "name": "Faculty of Engineering and Natural Sciences",
+        "short_code": "FENS",
+        "programs": [
+          {
+            "id": "computer-science-engineering",
+            "name": "Computer Science and Engineering",
+            "subject_codes": ["CS", "ENS", "IF", "MATH", "DSA", "EE"],
+            "keywords": [
+              "software", "algorithm", "data", "programming", "artificial intelligence", 
+              "network", "security", "cyber", "database", "computer vision", 
+              "operating systems", "cloud", "distributed", "compiler", "robotics"
+            ]
+          },
+          {
+            "id": "electronics-engineering",
+            "name": "Electronics Engineering",
+            "subject_codes": ["EE", "ENS", "MATH", "PHYS", "CS"],
+            "keywords": [
+              "circuit", "signal", "electronics", "communication", "hardware", 
+              "microprocessor", "semiconductor", "rf", "wireless", "analog", 
+              "digital", "photonics", "electromagnetic", "embedded", "vlsi"
+            ]
+          },
+          {
+            "id": "mechatronics-engineering",
+            "name": "Mechatronics Engineering",
+            "subject_codes": ["ME", "ENS", "CS", "MATH", "PHYS", "EE"],
+            "keywords": [
+              "robotics", "automation", "mechanical", "control systems", "design", 
+              "manufacturing", "dynamics", "kinematics", "thermodynamics", "fluid", 
+              "sensors", "actuators", "mechatronics", "embedded systems"
+            ]
+          },
+          {
+            "id": "industrial-engineering",
+            "name": "Industrial Engineering",
+            "subject_codes": ["IE", "OPIM", "ENS", "MATH", "DSA", "MGMT"],
+            "keywords": [
+              "optimization", "supply chain", "production", "operations", "system", 
+              "logistics", "simulation", "stochastic", "scheduling", "quality", 
+              "decision", "inventory", "ergonomics", "process", "manufacturing"
+            ]
+          },
+          {
+            "id": "materials-science-nanoengineering",
+            "name": "Materials Science and Nanoengineering",
+            "subject_codes": ["MAT", "CHE", "PHYS", "MATH", "ENS", "BIO"],
+            "keywords": [
+              "material", "nanotechnology", "chemistry", "physics", "synthesis", 
+              "characterization", "polymer", "ceramic", "composite", "biomaterial", 
+              "energy", "quantum", "molecular", "crystal"
+            ]
+          },
+          {
+            "id": "molecular-biology-genetics-bioengineering",
+            "name": "Molecular Biology, Genetics and Bioengineering",
+            "subject_codes": ["BIO", "ENS", "CHE", "MATH", "CS"],
+            "keywords": [
+              "molecular", "genetics", "bioengineering", "cell", "biotechnology", 
+              "genome", "protein", "bioinformatics", "immunology", "neuroscience", 
+              "cancer", "biology", "organic", "metabolism"
+            ]
+          },
+          {
+            "id": "data-science-analytics",
+            "name": "Data Science and Analytics",
+            "subject_codes": ["DSA", "CS", "MATH", "ENS", "IE", "OPIM", "ECON", "BAN"],
+            "keywords": [
+              "data", "statistics", "machine learning", "analytics", "optimization", 
+              "big data", "deep learning", "inference", "regression", "visualization", 
+              "predictive", "mining", "artificial intelligence", "python", "modeling"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Faculty of Arts and Social Sciences",
+        "short_code": "FASS",
+        "programs": [
+          {
+            "id": "economics",
+            "name": "Economics",
+            "subject_codes": ["ECON", "MATH", "FIN", "MGMT"],
+            "keywords": [
+              "economy", "market", "finance", "game theory", "macroeconomics", 
+              "microeconomics", "policy", "econometrics", "growth", "development", 
+              "behavioral", "trade", "monetary", "public", "industrial organization"
+            ]
+          },
+          {
+            "id": "political-science-international-relations",
+            "name": "Political Science and International Relations",
+            "subject_codes": ["POLS", "IR", "HIST", "SPS"],
+            "keywords": [
+              "politics", "international relations", "democracy", "state", 
+              "political theory", "diplomacy", "conflict", "migration", "eu", 
+              "comparative", "sociology", "foreign policy", "security", "governance"
+            ]
+          },
+          {
+            "id": "psychology",
+            "name": "Psychology",
+            "subject_codes": ["PSY", "BIO", "NS"],
+            "keywords": [
+              "psychology", "cognitive", "behavior", "social", "developmental", 
+              "brain", "neuroscience", "perception", "memory", "clinical", 
+              "experimental", "personality", "emotion", "health"
+            ]
+          },
+          {
+            "id": "visual-arts-visual-communication-design",
+            "name": "Visual Arts and Visual Communication Design",
+            "subject_codes": ["VA", "VAVCD", "HART"],
+            "keywords": [
+              "art", "design", "visual", "media", "film", "communication", 
+              "typography", "animation", "graphic", "illustration", "studio", 
+              "photography", "interaction", "interface", "branding"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Sabancı Business School",
+        "short_code": "SBS",
+        "programs": [
+          {
+            "id": "management",
+            "name": "Management",
+            "subject_codes": ["MGMT", "MKTG", "FIN", "OPIM", "ORG", "BAN", "ACC", "ENT"],
+            "keywords": [
+              "management", "marketing", "finance", "strategy", "organization", 
+              "business", "leadership", "accounting", "entrepreneurship", 
+              "innovation", "corporate", "investment", "valuation", "consumer", "hr"
+            ]
+          }
+        ]
+      }
+    ]
+  }
