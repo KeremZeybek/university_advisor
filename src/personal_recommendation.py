@@ -85,32 +85,95 @@ def check_smart_logic(row, taken_courses):
     else: return "LOCKED", " AND ".join(missing_requirements)
 
 
-def calculate_score(row, interest_keywords):
+def calculate_score(row, interest_keywords, student_year=1, allowed_codes=None):
     """
-    Dersin içeriğini (Description + Name), kullanıcının ilgi alanlarına (interest_keywords)
-    göre puanlar.
+    Dersin puanını hesaplar:
+    1. Progression Score (Zincirleme Bonusu): Ön koşulu varsa ve sağlanmışsa.
+    2. Keyword Score: İlgi alanı eşleşmesi.
+    3. Year Relevance (Sınıf Uyumu): Öğrencinin sınıfına uygun dersler (N ve N+1).
     """
+    # Metinleri hazırla
     text = (str(row['Course Name']) + " " + str(row['Description'])).lower()
-    
+    prereq_text = str(row['Prerequisites']).lower()
+    course_code_str = str(row['Course Code']).strip().upper()
     score = 0
+    reasons = []
+
+    # ---------------------------------------------------------
+    # 1. ZİNCİRLEME BONUSU (PROGRESSION BOOST)
+    # ---------------------------------------------------------
+    has_prerequisite = False
+    if pd.notna(row['Prerequisites']) and row['Prerequisites'] != "nan":
+        # Harf + Sayı formatında ders kodu var mı?
+        if re.search(r"[a-z]{2,5}\s*\d{3,4}", prereq_text):
+            has_prerequisite = True
+
+    if has_prerequisite:
+        score += 50
+        reasons.append("Zincir Ders")
+
+    # ---------------------------------------------------------
+    # 2. İLGİ ALANI (KEYWORD MATCHING)
+    # ---------------------------------------------------------
+    keyword_hits = 0
     matched_terms = []
-    
-    # 1. Keyword Eşleşmesi (Ana Puanlama)
     for w in interest_keywords:
         if w.lower() in text:
-            score += 10 
+            keyword_hits += 1
             matched_terms.append(w)
-            
+    
+    if keyword_hits > 0:
+        score += (keyword_hits * 20)
+        reasons.append(f"İlgi: {', '.join(matched_terms[:2])}")
+
+    # ---------------------------------------------------------
+    # 3. SINIF UYUMU (YEAR RELEVANCE) - YENİ ÖZELLİK
+    # ---------------------------------------------------------
+    
     try:
         match = re.search(r"(\d+)", str(row['Course Code']))
         if match:
-            level = int(match.group(1))
-            if 400 <= level < 500: 
-                score += 5
+            course_num = int(match.group(1))
+            course_level = course_num // 100 # 201 -> 2, 412 -> 4
+            
+            # Hedef seviyeleri belirle
+            # 4. sınıflar için 4 ve üstü (Master dersleri dahil olabilir)
+            if student_year >= 4:
+                target_levels = [4, 5, 6]
+            else:
+                target_levels = [student_year, student_year + 1]
+            
+            if course_level in target_levels:
+                score += 20
+                # reasons.append(f"{course_level}. Seviye Uyumu") # Ekranda kalabalık etmesin diye kapalı
+            
+            if student_year == 1 and course_level >= 4: score -= 40
+            if student_year == 3 and course_level == 2: score -= 10
+            if student_year == 3 and course_level == 1: score -= 20
+            if student_year == 4 and course_level == 1: score -= 40
+            if student_year == 4 and course_level == 2: score -= 20
+            
+
     except: 
         pass
+
+    if allowed_codes:
+    # Ders kodunun başındaki harfleri al (CS 201 -> CS)
+        subject_match = re.match(r"([A-Z]+)", course_code_str)
         
-    return score, ", ".join(list(set(matched_terms)))
+        if subject_match:
+            subject = subject_match.group(1)
+            
+            # Eğer dersin konusu izin verilen listede YOKSA -> CEZA KES
+            if subject not in allowed_codes:
+                score -= 50
+
+    score = min(100, score)
+    
+    why_string = " + ".join(reasons) if reasons else "Genel"
+    
+    return score, why_string
+
 
 # ---------------------------------------------------------
 # 4. MAIN PROCESSING BLOCK
