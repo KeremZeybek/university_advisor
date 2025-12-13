@@ -20,6 +20,7 @@ import pandas as pd
 import json
 import os
 import re
+from src.ml_engine import calculate_ml_scores 
 
 # Özel Modüller (src klasöründen)
 from src.advisor import UniversityAdvisor
@@ -135,7 +136,7 @@ with st.sidebar:
     st.subheader("1. Akademik Durum")
     level_choice = st.radio(
         "Hedef Ders Seviyesi:",
-        ["Lisans (Undergrad)", "Yüksek Lisans (Grad)"],
+        ["Lisans", "Yüksek Lisans"],
         index=0
     )
     
@@ -143,7 +144,7 @@ with st.sidebar:
     st.subheader("2. Dönem")
     term_choice = st.radio(
         "Hangi dönem için plan yapıyorsun?",
-        ["Fall (Güz)", "Spring (Bahar)", "Her İkisi"],
+        ["Güz", "Bahar", "Her ikisi de"],
         index=0
     )
     
@@ -237,69 +238,122 @@ with tab1:
     st.caption(f"Filtreler: {', '.join(active_keywords[:5])}...")
     st.caption(f"İzin Verilen Kodlar: {', '.join(allowed_codes)}")
 
-    # --- B. Analiz ve Filtreleme ---
     if st.button("Analizi Başlat", type="primary"):
-        with st.spinner('Dersler analiz ediliyor...'):
+        with st.spinner('Yapay Zeka dersleri analiz ediyor...'):
             df = courses_df.copy()
 
-            # 1. LAB & RECIT FİLTRESİ (Gürültü Temizliği)
-            # Regex: Kodu 3 rakamla bitip sonunda R veya L olanları at (Örn: 201R)
+            # ---------------------------------------------------------
+            # 1. TEMEL FİLTRELER (Gürültü Temizliği)
+            # ---------------------------------------------------------
+            
+            # Recit & Lab Filtresi (Regex: Sonu R veya L ile biten 3 haneli kodlar)
             df = df[~df['Course Code'].str.contains(r"\d{3}[RL]$", regex=True, na=False)]
-            # İsim Filtresi: Adında Recitation/Lab geçenleri at
+            
+            # İsim Filtresi (Adında Recitation/Lab geçenleri at)
             exclude_keywords = ["Recitation", "Laboratory", " Lab ", "Discussion"]
             pattern = '|'.join(exclude_keywords)
             df = df[~df['Course Name'].str.contains(pattern, case=False, na=False)]
             
-            # 2. SEVİYE FİLTRESİ
+            # Seviye Filtresi
             if level_choice.startswith("Lisans"):
-                df = df[df['Level'] < 500] # Sadece lisans
+                df = df[df['Level'] < 500]
             else:
-                df = df[df['Level'] >= 400] # Master ve Doktora
+                df = df[df['Level'] >= 400]
 
-            # 3. DÖNEM FİLTRESİ
-            if "Fall" in term_choice:
+            # Dönem Filtresi
+            if "Güz" in term_choice or "Fall" in term_choice:
                 df = df[df['Term'].str.contains("Fall", case=False, na=False)]
-            elif "Spring" in term_choice:
+            elif "Bahar" in term_choice or "Spring" in term_choice:
                 df = df[df['Term'].str.contains("Spring", case=False, na=False)]
             
-            # 4. METİN TEMİZLİĞİ (HTML Çöplerini At)
+            # ---------------------------------------------------------
+            # 2. VERİ HAZIRLIĞI
+            # ---------------------------------------------------------
+            
+            # Metin Temizliği
             cols_to_clean = ['Description', 'Restrictions', 'Prerequisites', 'Corequisites']
             for col in cols_to_clean:
                 if col in df.columns:
                     df[col] = df[col].apply(sanitize_text)
             
-            # 5. TRANSKRİPT KONTROLÜ (Alınanları Çıkar)
+            # Transkript Kontrolü (Alınanları Çıkar)
             df = df[~df['Course Code'].isin(taken_courses)]
             
-            # 6. MANTIK KONTROLÜ (Ön koşullar sağlanıyor mu?)
+            # Ön Koşul (Logic) Kontrolü
             df[['Status', 'Missing_Reqs']] = df.apply(
                 lambda r: pd.Series(check_smart_logic(r, taken_courses)), axis=1
             )
             
-            # 7. PUANLAMA (Scoring Algorithm)
-            # Parametreler: (Satır, Keywordler, Sınıf, İzin Verilen Kodlar)
+            # ---------------------------------------------------------
+            # 3. AI MOTORU & HİBRİT PUANLAMA
+            # ---------------------------------------------------------
+            
+            # A. ML ile İçerik Benzerliği Hesapla
+            user_query = " ".join(active_keywords)
+            ml_scores = calculate_ml_scores(df, user_query)
+            df['ML_Score'] = ml_scores
+            
+            # B. Hibrit Skorlama Fonksiyonu
+            def calculate_hybrid_score(row, current_year):
+                # Başlangıç puanı Yapay Zeka'dan gelir
+                score = row['ML_Score']
+                reasons = []
+                
+                # Eğer ML skoru yüksekse açıklama ekle
+                if score > 15:
+                    reasons.append(f"İçerik Uyumu (%{int(score)})")
+                
+                # Zincirleme Bonusu (Prerequisite varsa ve sağlanmışsa)
+                prereq_text = str(row['Prerequisites']).lower()
+                # Basit kontrol: İçinde ders kodu formatı (CS 201 gibi) var mı?
+                if re.search(r"[a-z]{2,5}\s*\d{3,4}", prereq_text):
+                    score += 20
+                    reasons.append("Zincir Ders (+20)")
+                
+                # Sınıf Uyumu (Year Relevance)
+                try:
+                    code_num = int(re.search(r"(\d+)", str(row['Course Code'])).group(1))
+                    level = code_num // 100
+                    
+                    if current_year == 1 and level >= 4: score -= 30  # 1. sınıfa 4. sınıf dersi önerme
+                    if level == current_year or level == current_year + 1:
+                        score += 10
+                        # reasons.append("Sınıfına Uygun")
+                except:
+                    pass
+
+                # Bölüm Kodu Kontrolü (Allowed Codes)
+                # Dersin kodu izin verilenler listesinde değilse puan kır
+                course_subject = row['Course Code'].split()[0]
+                if course_subject not in allowed_codes:
+                    score -= 50
+
+                return pd.Series([score, " + ".join(reasons)])
+
+            # Fonksiyonu Uygula
             score_results = df.apply(
-                lambda r: pd.Series(calculate_score(r, active_keywords, student_year, allowed_codes)), axis=1
+                lambda r: calculate_hybrid_score(r, student_year), axis=1
             )
             df['Score'] = score_results[0]
             df['Why'] = score_results[1]
             
-            # 8. SONUÇ FİLTRESİ (Baraj Puanı)
-            MIN_SCORE_THRESHOLD = 40
+            # ---------------------------------------------------------
+            # 4. SONUÇ GÖSTERİMİ
+            # ---------------------------------------------------------
+            
+            MIN_SCORE_THRESHOLD = 20 # ML skorları üzerine bonuslar eklendiği için barajı ayarladık
             
             final_df = df[
                 (df['Status'] == 'READY') & 
                 (df['Score'] >= MIN_SCORE_THRESHOLD) 
             ].sort_values(by='Score', ascending=False)
-
-            # Sadece en iyi 20 dersi göster
+  
             final_df = final_df.head(20)
 
-            # --- C. Sonuç Gösterimi ---
             if final_df.empty:
                 st.warning(f"Kriterlere uygun ders bulunamadı (Min Puan: {MIN_SCORE_THRESHOLD}). İlgi alanını veya dönemi değiştirmeyi dene.")
             else:
-                st.success(f"En uygun **{len(final_df)}** ders listeleniyor.")
+                st.success(f"Yapay Zeka senin için en uygun **{len(final_df)}** dersi buldu.")
                 
                 st.dataframe(
                     final_df[['Course Code', 'Course Name', 'Score', 'Why', 'Description']],
