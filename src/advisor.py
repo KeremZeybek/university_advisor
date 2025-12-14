@@ -142,7 +142,6 @@ if __name__ == "__main__":
     # Bu blok sadece dosya doğrudan çalıştırılırsa çalışır.
     # Streamlit üzerinden import edilirse çalışmaz.
     
-    # Dosya yollarını dinamik bul
     current_dir = os.path.dirname(os.path.abspath(__file__))
     base_dir = os.path.dirname(current_dir)
     major_path = os.path.join(base_dir, 'data', 'json', 'undergrad_majors.json')
@@ -170,9 +169,6 @@ if __name__ == "__main__":
         synergies = advisor.calculate_synergy(test_major_id)
         for syn in synergies[:3]:
             print(f"   - {syn['minor_name']} | Skor: {syn['score']}")
-            print(f"     Ortak Dersler: {syn['shared_codes']}")
             
-    except FileNotFoundError:
-        print("❌ HATA: JSON dosyaları bulunamadı. Lütfen 'data/json' klasörünü kontrol et.")
     except Exception as e:
-        print(f"❌ Beklenmeyen Hata: {e}")
+        print(f"❌ Hata: {e}")

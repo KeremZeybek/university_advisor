@@ -1,8 +1,24 @@
-# 🎓 Sabancı University Smart Advisor
+# 🎓 Sabancı University Smart Advisor & Degree Auditor
 
-Bu proje, Sabancı Üniversitesi öğrencileri için yapay zeka destekli bir **Akademik Danışman ve Ders Öneri Sistemi**dir.
+**Sabancı Üniversitesi** öğrencileri için geliştirilmiş; Yapay Zeka destekli ders önerme, akademik yol haritası çizme ve mezuniyet denetim (audit) sistemidir.
 
-Öğrencilerin transkriptlerini, ilgi alanlarını ve akademik durumlarını analiz ederek onlara en uygun **Dersleri**, **Yandal (Minor)** programlarını ve **Akademik Yolları** önerir.
+Bu proje, öğrencilerin transkriptlerini analiz eder, ilgi alanlarına (NLP) göre ders önerir ve bölüm yükümlülüklerini (DSA, CS vb.) otomatik kontrol eder.
+
+---
+
+## 🚀 Öne Çıkan Özellikler
+
+### 1. 🧠 Yapay Zeka Destekli Ders Önerisi (AI Powered)
+* **Sentence-BERT (HuggingFace):** Kullanıcının ilgi alanlarını ("I want to learn about finance and money") anlar ve ders açıklamalarıyla anlamsal eşleştirme yapar.
+* **Hibrit Puanlama:** AI skorunu; dersin ön koşulları (Zincirleme Bonusu) ve öğrencinin sınıf seviyesiyle birleştirir.
+
+### 2. 🕵️‍♂️ Mezuniyet Denetçisi (Degree Audit) - *YENİ*
+* **Otomatik Müfredat Analizi:** Bölüm web sayfalarındaki (HTML) tabloları okuyarak zorunlu dersleri, kredi yükümlülüklerini (SU & ECTS) ve seçmeli havuzlarını otomatik çıkarır.
+* **İlerleme Takibi:** Transkriptinizdeki dersleri müfredatla kıyaslayıp "Ne kadar yolum kaldı?" sorusunu cevaplar.
+
+### 3. 📅 Dinamik Ders Programı (Live Schedule)
+* BannerWeb üzerinden güncel ders programını çeker.
+* Dersin hangi dönem, hangi saatte ve hangi hoca tarafından verildiğini analiz eder.
 
 ---
 
@@ -11,29 +27,33 @@ Bu proje, Sabancı Üniversitesi öğrencileri için yapay zeka destekli bir **A
 ```text
 university_advisor/
 │
-├── data/                       # TÜM VERİLERİN DEPOSU
-│   ├── csv/                    # İşlenmiş ve temizlenmiş veriler
-│   │   ├── course_full_data_v2.csv    # (Ham) Ders kataloğu
-│   │   ├── active_schedule_master.csv # (İşlenmiş) Dönemlik ders programı
-│   │   └── course_links_master.csv    # (Eski) Link veritabanı
-│   │
-│   ├── json/                   # Program yapıları (Major/Minor)
+├── app.py                      # 🖥️ Ana Arayüz (Streamlit Dashboard)
+├── main.py                     # ⚙️ Terminal Test Modülü
+│
+├── data/                       # 💾 VERİ DEPOSU
+│   ├── csv/                    # İşlenmiş veriler (Schedule, Catalog)
+│   │   ├── active_schedule_master.csv
+│   │   ├── course_data_clean.csv
+│   │   ├── course_full_data_v2.csv
+│   │   └── course_links_master.csv
+|   |   
+│   ├── json/                   # Müfredat ve Bölüm Yapıları
 │   │   ├── undergrad_majors.json
-│   │   └── undergrad_minors.json
+│   │   ├── undergrad_minors.json
+│   │   └── dsa_requirements_full.json
 │   │
-│   ├── raw_html/               # BannerWeb'den indirilen ham sayfalar
-│   │   ├── 2025-2026_fall_schedule.html
-│   │   └── 2025-2026_spring_schedule.html
-│   │
-│   └── user/                   # (Git'e atılmaz) Kişisel kullanıcı verileri
-│       └── transcript.txt
+│   └── raw_html/               # Ham HTML Kaynakları
+│       ├── dsa_html/           # DSA Bölümü Kaynak Dosyaları
+│       │   ├── dsa_degree_detail.html
+│       │   ├── dsa_core.html
+│       │   └── ...
+│       ├── 2025.2026_spring_schedule.html
+│       └── 2025-2026_fall_schedule.html
 │
-├── src/                        # UYGULAMA MANTIĞI (BACKEND)
-│   ├── advisor.py              # Bölüm/Yandal arama ve uyum motoru
-│   ├── personal_recommendation.py  # Ders puanlama ve ön koşul algoritması
-│   ├── parse_schedule.py       # HTML -> CSV dönüştürücü (Parser)
-│   └── clean_data.py           # Veri temizleme scripti
-│
-├── app.py                      # KULLANICI ARAYÜZÜ (STREAMLIT)
-├── main.py                     # (Opsiyonel) Terminal test dosyası
-└── README.md                   # Proje dokümantasyonu
+└── src/                        # 🧠 UYGULAMA MOTORU
+    ├── advisor.py              # Bölüm/Yandal Arama Motoru
+    ├── ml_engine.py            # AI (Sentence-BERT) Katmanı
+    ├── parse_degree.py         # Müfredat Ayrıştırıcı (HTML -> JSON)
+    ├── parse_schedule.py       # Ders Programı Ayrıştırıcı
+    ├── personal_recommendation.py # Puanlama ve Mantık Kontrolü
+    └── clean_data.py           # Veri Temizleme Araçları

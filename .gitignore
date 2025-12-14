@@ -8,5 +8,6 @@ Thumbs.db
 data/user/
 transcript.txt
 *.pdf
+.streamlit
 
 # data/csv/

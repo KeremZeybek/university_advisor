@@ -1,43 +1,45 @@
-import pandas as pd
-import numpy as np
+"""
+=============================================================================
+MODÜL: AI / ML Engine
+DOSYA: src/ml_engine.py
+TANIM: Sentence-BERT modelini kullanarak metinler arası anlamsal benzerlik hesaplar.
+
+MEVCUT FONKSİYONLAR:
+1. calculate_ml_scores(df, user_query) ... Ders açıklamaları ile aranan kelime arasındaki
+                                           benzerlik skorunu (0-100) döndürür.
+=============================================================================
+"""
+
 from sentence_transformers import SentenceTransformer, util
-import streamlit as st
+import pandas as pd
 
-# Modeli önbelleğe alıyoruz ki her seferinde tekrar indirmesin (80MB civarı)
-@st.cache_resource
-def load_model():
-    # 'all-MiniLM-L6-v2' -> Hızlı ve çok güçlü bir modeldir.
-    return SentenceTransformer('all-MiniLM-L6-v2')
+# Modeli global olarak bir kere yükle (Performans için)
+# Bu model küçük ve hızlıdır.
+model = SentenceTransformer('all-MiniLM-L6-v2')
 
-def calculate_ml_scores(df, user_interest_text):
+def calculate_ml_scores(df, user_query):
     """
-    Sentence-BERT kullanarak anlamsal benzerlik (Semantic Similarity) hesaplar.
-    Bu yöntem, kelime geçmese bile anlamı yakalar.
-    """
-    model = load_model()
+    DataFrame içindeki 'Description' (yoksa 'Course Name') sütunu ile
+    kullanıcı sorgusunu karşılaştırır.
     
-    # 1. Veri Hazırlığı: Ders Adı + Açıklama
-    # Açıklaması olmayanlara sadece isim veriyoruz
-    course_texts = (
-        df['Course Name'].fillna('') + ": " + 
-        df['Description'].fillna('')
+    Returns:
+        list: 0 ile 100 arasında float puan listesi.
+    """
+    if df.empty or not user_query:
+        return [0] * len(df)
+    
+    # Hedef metinleri hazırla (Açıklama yoksa ismi kullan)
+    corpus = df.apply(
+        lambda x: str(x['Description']) if pd.notna(x['Description']) and len(str(x['Description'])) > 5 
+        else str(x['Course Name']), axis=1
     ).tolist()
     
-    # 2. Embedding (Metni Sayısal Vektöre Çevirme)
-    # Bu adımda model, internetten öğrendiği bilgiyi kullanarak dersleri vektöre çevirir.
-    course_embeddings = model.encode(course_texts, convert_to_tensor=True)
+    # Embedding (Vektöre çevirme)
+    query_embedding = model.encode(user_query, convert_to_tensor=True)
+    corpus_embeddings = model.encode(corpus, convert_to_tensor=True)
     
-    # 3. Kullanıcının İsteğini Vektöre Çevir
-    query_embedding = model.encode(user_interest_text, convert_to_tensor=True)
+    # Cosine Similarity (Benzerlik) Hesapla
+    cosine_scores = util.cos_sim(query_embedding, corpus_embeddings)[0]
     
-    # 4. Cosine Similarity Hesapla
-    # Kullanıcının hayali ile derslerin gerçeği arasındaki benzerlik
-    cosine_scores = util.cos_sim(query_embedding, course_embeddings)[0]
-    
-    # 5. Puanları 0-100 arasına çek (Tensor'dan numpy'a çeviriyoruz)
-    # Model -1 ile 1 arası döndürür, biz negatifleri 0 yapıp 100 ile çarpalım.
-    scores = cosine_scores.cpu().numpy()
-    scores = np.maximum(scores, 0) * 100
-    scores = np.round(scores, 1)
-    
-    return scores
+    # Skoru 100 üzerinden döndür
+    return [round(score.item() * 100, 1) for score in cosine_scores]

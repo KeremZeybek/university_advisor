@@ -3,15 +3,14 @@
 PROJE: SABANCI UNIVERSITY SMART ADVISOR
 DOSYA: app.py
 TANIM: Streamlit tabanlı ana web arayüzü.
+DURUM: FINAL (Gereksiz importlar temizlendi, Yeni Recommender aktif).
 
-YOL HARİTASI (ROADMAP):
-1. IMPORTS & CONFIG ....... Kütüphaneler ve Sayfa Ayarları
-2. DATA LOADING ........... JSON ve CSV dosyalarının yüklenmesi ve birleştirilmesi
-3. SIDEBAR (INPUTS) ....... Kullanıcıdan veri alma (Sınıf, Transkript vb.)
-4. MAIN TABS .............. Ana Arayüz Sekmeleri
-   |__ Tab 1: Recommendation Engine (Ders Öneri Motoru - EN KARMAŞIK KISIM)
-   |__ Tab 2: Program Search (Bölüm Arama)
-   |__ Tab 3: Synergy Analysis (Major-Minor Uyumu)
+YOL HARİTASI:
+1. AYARLAR ................ Kütüphaneler ve Config
+2. VERİ YÜKLEME ........... Standart ve Güvenli CSV Okuma
+3. AUDIT MOTORU ........... Mezuniyet Kontrolü (Görselleştirme için)
+4. ARAYÜZ (SIDEBAR) ....... Transkript Yöneticisi (Ekle/Çıkar)
+5. ARAYÜZ (SEKMELER) ...... Denetim, Puanlı Öneri ve Arama
 =============================================================================
 """
 
@@ -20,380 +19,384 @@ import pandas as pd
 import json
 import os
 import re
-from src.ml_engine import calculate_ml_scores 
 
-# Özel Modüller (src klasöründen)
 from src.advisor import UniversityAdvisor
-from src.personal_recommendation import check_smart_logic, calculate_score, sanitize_text
+from src.recommender import get_recommendations
 
 # =============================================================================
-# 1. IMPORTS & CONFIGURATION
+# 1. AYARLAR
 # =============================================================================
-st.set_page_config(
-    page_title="Sabancı University Smart Advisor",
-    page_icon="🎓",
-    layout="wide"
-)
+st.set_page_config(page_title="SU Smart Advisor", page_icon="🎓", layout="wide")
 
 # =============================================================================
-# 2. DATA LOADING & PRE-PROCESSING
+# 2. VERİ YÜKLEME
 # =============================================================================
 @st.cache_data
 def load_data():
-    """
-    Tüm veri setlerini yükler, temizler ve birleştirir.
-    Cache mekanizması sayesinde sayfa yenilendiğinde tekrar çalışmaz, hız kazandırır.
-    """
     base_dir = os.path.dirname(os.path.abspath(__file__))
     
-    # --- A. Dosya Yolları ---
+    # Dosya Yolları
     major_path = os.path.join(base_dir, 'data', 'json', 'undergrad_majors.json')
     minor_path = os.path.join(base_dir, 'data', 'json', 'undergrad_minors.json')
-    catalog_path = os.path.join(base_dir, 'data', 'csv', 'course_full_data_v2.csv')    # Statik Veri (Açıklama, Ön Koşul)
-    schedule_path = os.path.join(base_dir, 'data', 'csv', 'active_schedule_master.csv') # Dinamik Veri (Dönem, Şube)
+    dsa_req_path = os.path.join(base_dir, 'data', 'json', 'dsa_requirements_full.json')
+    catalog_path = os.path.join(base_dir, 'data', 'csv', 'course_full_data_v2.csv')
+    schedule_path = os.path.join(base_dir, 'data', 'csv', 'active_schedule_master.csv')
     
-    # --- B. JSON Yükleme (Major/Minor) ---
-    if not os.path.exists(major_path) or not os.path.exists(minor_path):
-        st.error("❌ Kritik Hata: JSON dosyaları eksik! 'data/json' klasörünü kontrol edin.")
-        st.stop()
-        
-    with open(major_path, 'r', encoding='utf-8') as f: majors = json.load(f)
-    with open(minor_path, 'r', encoding='utf-8') as f: minors = json.load(f)
+    # JSON Yükleme
+    majors = json.load(open(major_path, 'r', encoding='utf-8')) if os.path.exists(major_path) else {}
+    minors = json.load(open(minor_path, 'r', encoding='utf-8')) if os.path.exists(minor_path) else {}
+    dsa_reqs = json.load(open(dsa_req_path, 'r', encoding='utf-8')) if os.path.exists(dsa_req_path) else None
     
-    # --- C. Katalog Yükleme ---
+    # Katalog Yükleme
     if not os.path.exists(catalog_path):
-        st.error(f"❌ Katalog verisi bulunamadı: {catalog_path}")
-        st.stop()
+        return majors, minors, dsa_reqs, pd.DataFrame()
         
     catalog_df = pd.read_csv(catalog_path)
-    
-    # Normalizasyon: Kodları BÜYÜK HARF ve boşluksuz yap (Örn: " cs 201 " -> "CS 201")
+    catalog_df.columns = [c.strip() for c in catalog_df.columns]
     catalog_df['Course Code'] = catalog_df['Course Code'].astype(str).str.strip().str.upper()
     
-    # Temizlik: Katalogdaki güvenilmez 'Term' sütununu at
-    catalog_df.columns = [c.strip() for c in catalog_df.columns]
     if 'Term' in catalog_df.columns:
         catalog_df = catalog_df.drop(columns=['Term'])
-        
-    # --- D. Schedule (Tarife) Yükleme ve Birleştirme ---
+
+    # Schedule Yükleme ve Birleştirme
     if os.path.exists(schedule_path):
-        schedule_df = pd.read_csv(schedule_path)
-        schedule_df.columns = [c.strip() for c in schedule_df.columns]
-        
-        if 'Course Code' in schedule_df.columns and 'Term' in schedule_df.columns:
-            schedule_df['Course Code'] = schedule_df['Course Code'].astype(str).str.strip().str.upper()
-            
-            # AGGREGATION: Bir dersin tüm şubelerini (A1, B1) tek satıra indir -> "Fall, Spring"
-            term_info = schedule_df.groupby('Course Code')['Term'].apply(
-                lambda x: ', '.join(sorted(x.unique()))
-            ).reset_index()
-            
-            # MERGE: Katalog ile Dönem bilgisini birleştir
-            # how='right' -> Sadece bu yıl açılan (Schedule'da olan) dersleri al, eskileri at.
-            merged_df = pd.merge(catalog_df, term_info, on='Course Code', how='right')
-            
-            # Eksik verileri doldur
-            merged_df['Description'] = merged_df['Description'].fillna("Açıklama bulunamadı.")
-            merged_df['Prerequisites'] = merged_df['Prerequisites'].fillna("")
-            
-        else:
-            st.error("⚠️ Schedule dosya formatı hatalı (Sütunlar eksik).")
-            merged_df = catalog_df
-            merged_df['Term'] = 'Unknown'
-    else:
-        st.warning("⚠️ Schedule dosyası bulunamadı. Filtreleme çalışmayacak.")
-        merged_df = catalog_df
-        merged_df['Term'] = 'Unknown'
-
-    # --- E. Seviye (Level) Çıkarma ---
-    # CS 412 -> 412 sayısını çıkarır.
-    def extract_level(code):
         try:
-            match = re.search(r"(\d+)", str(code))
-            return int(match.group(1)) if match else 0
+            schedule_df = pd.read_csv(schedule_path)
+            schedule_df.columns = [c.strip() for c in schedule_df.columns]
+            
+            if 'Course Code' in schedule_df.columns and 'Term' in schedule_df.columns:
+                schedule_df['Course Code'] = schedule_df['Course Code'].astype(str).str.strip().str.upper()
+                term_info = schedule_df.groupby('Course Code')['Term'].apply(
+                    lambda x: ', '.join(sorted(set([str(i) for i in x if pd.notna(i)])))
+                ).reset_index()
+                catalog_df = pd.merge(catalog_df, term_info, on='Course Code', how='left')
+                catalog_df['Term'] = catalog_df['Term'].fillna("Unknown")
+            else:
+                catalog_df['Term'] = 'Unknown'
         except:
-            return 0
-    
-    merged_df['Level'] = merged_df['Course Code'].apply(extract_level)
-    
-    return majors, minors, merged_df
+            catalog_df['Term'] = 'Unknown'
+    else:
+        catalog_df['Term'] = 'Unknown'
 
-# Veriyi Başlat
+    # Seviye (Level) Bilgisi Ekle
+    def extract_level(code):
+        try: return int(re.search(r"(\d+)", str(code)).group(1)) // 100
+        except: return 0
+    catalog_df['Level'] = catalog_df['Course Code'].apply(extract_level)
+
+    return majors, minors, dsa_reqs, catalog_df
+
 try:
-    major_data, minor_data, courses_df = load_data()
+    major_data, minor_data, dsa_requirements, courses_df = load_data()
     advisor = UniversityAdvisor(major_data, minor_data)
 except Exception as e:
-    st.error(f"Sistem başlatılırken hata oluştu: {e}")
+    st.error(f"Sistem başlatılırken hata: {e}")
     st.stop()
 
 # =============================================================================
-# 3. SIDEBAR (USER INPUTS)
+# 3. AUDIT MOTORU (Görselleştirme İçin - DÜZELTİLMİŞ versiyon)
 # =============================================================================
+def run_degree_audit(taken_courses, requirements):
+    if not requirements: return None, 0
+    
+    report = {}
+    reqs = requirements['requirements']
+    total_su_completed = 0
+    
+    # --- 1. UNIVERSITY COURSES ---
+    uc_data = reqs.get('university_courses', {})
+    uc_objects = uc_data.get('course_objects', [])
+    mandatory_uc = [c for c in uc_objects if not c['code'].startswith('HUM')]
+    
+    taken_uc = [c['code'] for c in mandatory_uc if c['code'] in taken_courses]
+    missing_uc = [c['code'] for c in mandatory_uc if c['code'] not in taken_courses]
+    
+    taken_hums = [c for c in taken_courses if c.startswith('HUM 2')]
+    if not taken_hums: missing_uc.append("HUM 2xx")
+    
+    uc_credits = sum([c['su_credit'] for c in mandatory_uc if c['code'] in taken_uc]) + (3 if taken_hums else 0)
+    
+    report['University Courses'] = {
+        "taken": taken_uc + taken_hums[:1], 
+        "missing": missing_uc,
+        "progress": uc_credits / 41, 
+        "credits_total": 41, 
+        "credits_done": uc_credits # EKLENDİ
+    }
+    total_su_completed += uc_credits
+
+    # --- 2. REQUIRED COURSES ---
+    maj_data = reqs.get('major_required', {})
+    maj_objects = maj_data.get('course_objects', [])
+    
+    group_cs = {'CS 210', 'DSA 210'}
+    group_math = {'MATH 201', 'MATH 212'}
+    pure_mandatory = [c for c in maj_objects if c['code'] not in group_cs and c['code'] not in group_math]
+    
+    taken_maj, missing_maj = [], []
+    maj_credits = 0
+    
+    if group_cs.intersection(taken_courses):
+        found = list(group_cs.intersection(taken_courses))[0]
+        taken_maj.append(found)
+        maj_credits += 3
+    else: missing_maj.append("CS/DSA 210")
+        
+    if group_math.intersection(taken_courses):
+        found = list(group_math.intersection(taken_courses))[0]
+        taken_maj.append(found)
+        maj_credits += 3
+    else: missing_maj.append("MATH 201/212")
+        
+    for c in pure_mandatory:
+        if c['code'] in taken_courses: 
+            taken_maj.append(c['code'])
+            maj_credits += c['su_credit']
+        else: missing_maj.append(c['code'])
+            
+    report['Required Courses'] = {
+        "taken": taken_maj, 
+        "missing": missing_maj,
+        "progress": maj_credits / 30, 
+        "credits_total": 30, 
+        "credits_done": maj_credits # EKLENDİ
+    }
+    total_su_completed += maj_credits
+
+    # --- 3. ELECTIVES ---
+    used = set(report['University Courses']['taken']) | set(report['Required Courses']['taken'])
+    remaining = taken_courses - used
+    
+    # Core Electives
+    core_pool = {c['code']: c['su_credit'] for c in reqs['core_electives'].get('pool_objects', [])}
+    core_matches = [c for c in remaining if c in core_pool]
+    core_cr = sum([core_pool[c] for c in core_matches])
+    
+    report['Core Electives'] = {
+        "taken": core_matches, 
+        "progress": min(core_cr / 27, 1.0), 
+        "credits_total": 27, 
+        "credits_done": core_cr # EKLENDİ
+    }
+    total_su_completed += core_cr
+    
+    # Area Electives
+    remaining -= set(core_matches)
+    area_pool = {c['code']: c['su_credit'] for c in reqs['area_electives'].get('pool_objects', [])}
+    area_matches = [c for c in remaining if c in area_pool]
+    area_cr = sum([area_pool[c] for c in area_matches])
+    
+    report['Area Electives'] = {
+        "taken": area_matches, 
+        "progress": min(area_cr / 12, 1.0), 
+        "credits_total": 12, 
+        "credits_done": area_cr # EKLENDİ
+    }
+    total_su_completed += area_cr
+    
+    # Free Electives
+    remaining -= set(area_matches)
+    free_cr = len(remaining) * 3
+    
+    report['Free Electives'] = {
+        "taken": list(remaining), 
+        "progress": min(free_cr / 15, 1.0), 
+        "credits_total": 15, 
+        "credits_done": free_cr # EKLENDİ
+    }
+    total_su_completed += free_cr
+    
+    return report, total_su_completed
+
+# =============================================================================
+# 4. SIDEBAR (Transkript Yöneticisi - Session State)
+# =============================================================================
+# Sidebar genel olarak sıkıntılı, arayüz düzgün gözükmüyor ve search engine problemini bir türlü çözemedim birkaç farklı sorting algorithm denedim ama olmadı. 
+# Yine de temel işlevsellik var. Aynı zamanda ders ekleme UI pratik değil her seçiminde sonra mouse ile tıklamak gerekiyor klavye üstünden ekleme seçeneği daha yok.
+
 with st.sidebar:
     st.header("⚙️ Öğrenci Profili")
     
-    # --- A. Akademik Seviye ---
-    st.subheader("1. Akademik Durum")
-    level_choice = st.radio(
-        "Hedef Ders Seviyesi:",
-        ["Lisans", "Yüksek Lisans"],
-        index=0
-    )
-    
-    # --- B. Dönem Seçimi ---
-    st.subheader("2. Dönem")
-    term_choice = st.radio(
-        "Hangi dönem için plan yapıyorsun?",
-        ["Güz", "Bahar", "Her ikisi de"],
-        index=0
-    )
-    
-    # --- C. Sınıf Bilgisi ---
-    st.subheader("3. Sınıf")
-    student_year = st.selectbox(
-        "Kaçıncı sınıfsın?",
-        options=[1, 2, 3, 4],
-        index=1, # Varsayılan 2. Sınıf
-        format_func=lambda x: f"{x}. Sınıf"
-    )
-
-    # --- D. Transkript (Otomatik Doldurma) ---
-    st.subheader("4. Transkript")
-    
-    # 2. sınıf ve üstü için ortak dersleri otomatik ekle
-    if student_year >= 2:
-        default_transcript = (
-            "MATH 101\nMATH 102\n"
-            "NS 101\nNS 102\n"
-            "SPS 101\nSPS 102\n"
-            "TLL 101\nTLL 102\n"
-            "HIST 191\nHIST 192\n"
-            "IF 100\nAL 102\nCIP 101\nPROJ 201\n"
-        )
-    else:
-        default_transcript = ""
+    c1, c2 = st.columns(2)
+    with c1: program_mode = st.selectbox("Program:", ["Data Science (DSA)", "CS (Demo)"])
+    with c2: level_choice = st.selectbox("Seviye:", ["Lisans", "Yüksek Lisans"])
         
-    transcript_input = st.text_area(
-        "Alınan Dersler (Kodu yazıp Enter'a bas):",
-        value=default_transcript,
-        height=200,
-        help="Buraya girilen dersler 'Tamamlanmış' sayılır ve önerilerden çıkarılır."
-    )
+    c3, c4 = st.columns(2)
+    with c3: student_year = st.selectbox("Sınıf:", [1, 2, 3, 4], index=1)
+    with c4: current_term = st.selectbox("Dönem:", ["Fall", "Spring"])
     
-    # Listeye Çevir
-    taken_courses = set([code.strip().upper() for code in transcript_input.split('\n') if code.strip()])
-    st.info(f"✅ {len(taken_courses)} ders tamamlandı.")
+    st.divider()
+    st.subheader("📝 Transkript Yöneticisi") # BOZUK BİR ARA DÜZELT
+
+    # Session State
+    if 'transcript_set' not in st.session_state:
+        if student_year >= 1:
+            """
+            default_codes = {
+                "MATH 101", "MATH 102", "NS 101", "NS 102",
+                "SPS 101", "SPS 102", "TLL 101", "TLL 102",
+                "HIST 191", "HIST 192", "IF 100", "CIP 101N", "AL 102", "PROJ 201"
+            }
+            """
+            default_codes = {
+                "MATH 101", "MATH 102", "NS 101", "NS 102",
+                "SPS 101", "SPS 102", "TLL 101", "TLL 102",
+                "HIST 191", "HIST 192", "IF 100", "CIP 101N", "AL 102", "PROJ 201",
+                "DSA 201", "DSA 210", "MATH 201", "MATH 203", "MATH 204", "MATH 306",
+                "CS 201", "PSY 202", "MKTG 301", "ENS 205", "ENS 208", "HUM 202"
+            }
+        else: default_codes = set()
+        st.session_state.transcript_set = default_codes
+
+    # Sıralama Yardımcısı
+    def get_sort_key(text):
+        code = text.split(' - ')[0]
+        match = re.match(r"([A-Z]+)\s*(\d+)", code)
+        if match: return (match.group(1), int(match.group(2)))
+        return (code, 0)
+
+    # Liste Hazırlığı
+    if not courses_df.empty:
+        clean_df = courses_df[~courses_df['Course Code'].str.contains(r"\d[RL]$", regex=True)].copy()
+        all_options = clean_df.apply(lambda x: f"{x['Course Code']} - {x['Course Name']}", axis=1).unique().tolist()
+        all_options_sorted = sorted(all_options, key=get_sort_key)
+    else: all_options_sorted = []
+
+    # Ekleme Paneli
+    with st.expander("➕ Ders Ekle", expanded=True):
+        taken_codes = st.session_state.transcript_set
+        available_options = [opt for opt in all_options_sorted if opt.split(' - ')[0] not in taken_codes]
+        
+        selected_to_add = st.selectbox("Ders Seç:", options=available_options, placeholder="Ara...", label_visibility="collapsed")
+        
+        if st.button("Listeye Ekle", type="secondary", use_container_width=True):
+            if selected_to_add:
+                st.session_state.transcript_set.add(selected_to_add.split(' - ')[0])
+                st.rerun()
+
+    # Çıkarma Paneli
+    if st.session_state.transcript_set:
+        with st.expander("➖ Ders Çıkar", expanded=False):
+            current_taken_list = sorted(
+                [opt for opt in all_options_sorted if opt.split(' - ')[0] in st.session_state.transcript_set],
+                key=get_sort_key
+            )
+            selected_to_remove = st.selectbox("Silinecek:", options=current_taken_list, label_visibility="collapsed")
+            
+            if st.button("Listeden Sil", type="primary", use_container_width=True):
+                if selected_to_remove:
+                    st.session_state.transcript_set.discard(selected_to_remove.split(' - ')[0])
+                    st.rerun()
+
+    # Tablo Gösterimi
+    st.caption(f"📚 Alınan Dersler ({len(st.session_state.transcript_set)})")
+    if st.session_state.transcript_set:
+        taken_list_data = []
+        for code in st.session_state.transcript_set:
+            name_row = courses_df[courses_df['Course Code'] == code]
+            course_name = name_row.iloc[0]['Course Name'] if not name_row.empty else "Unknown"
+            taken_list_data.append({"Kod": code, "Ders Adı": course_name})
+        
+        transcript_df = pd.DataFrame(taken_list_data)
+        transcript_df['S'] = transcript_df['Kod'].str.extract(r'([A-Z]+)')
+        transcript_df['N'] = transcript_df['Kod'].str.extract(r'(\d+)').fillna(0).astype(int)
+        transcript_df = transcript_df.sort_values(by=['S', 'N']).drop(columns=['S', 'N'])
+        
+        st.dataframe(transcript_df, hide_index=True, use_container_width=True, height=300)
+    else: st.info("Listeniz boş.")
+
+    taken_courses = st.session_state.transcript_set
 
 # =============================================================================
-# 4. MAIN INTERFACE (TABS)
+# 5. ANA ARAYÜZ (SEKMELER)
 # =============================================================================
-st.title("🎓 Sabancı Üniversitesi - Akıllı Akademik Danışman")
+st.title("🎓 Sabancı Akıllı Danışman")
+tab_audit, tab_rec, tab_search = st.tabs(["📊 Mezuniyet Durumu", "🤖 Ders Önerisi", "🔍 Bölüm Arama"])
 
-tab1, tab2, tab3 = st.tabs([
-    "📚 Akıllı Ders Önerisi", 
-    "🔍 Bölüm/Yandal Bulucu", 
-    "🤝 Major-Minor Uyumu"
-])
+# --- TAB 1: MEZUNİYET DURUMU (KeyError Çözülmüş) ---
+with tab_audit:
+    if "DSA" in program_mode and dsa_requirements:
+        audit_report, total_credits = run_degree_audit(taken_courses, dsa_requirements)
+        
+        c1, c2, c3 = st.columns(3)
+        c1.metric("Kredi", f"{total_credits} / 125", delta=125-total_credits, delta_color="inverse")
+        c2.metric("Tamamlanan", len(taken_courses))
+        c3.metric("Zorunlu Eksik", len(audit_report['Required Courses']['missing']) + len(audit_report['University Courses']['missing']), delta_color="inverse")
+        
+        st.divider()
+        for cat, data in audit_report.items():
+            icon = "✅" if data['progress'] >= 1.0 else "⏳"
+            with st.expander(f"{icon} {cat} (%{int(data['progress']*100)})", expanded=data['progress'] < 1.0):
+                st.progress(data['progress'])
+                
+                # İki Kolon: Alınanlar ve Eksikler
+                col_taken, col_missing = st.columns(2)
+                with col_taken:
+                    st.caption("✅ **Alınanlar**")
+                    if data['taken']: st.success(", ".join(data['taken']))
+                    else: st.info("Yok")
+                
+                with col_missing:
+                    st.caption("❌ **Eksikler / Kalanlar**")
+                    if data.get('missing'): 
+                        st.error(", ".join(data['missing']))
+                    elif data['credits_total'] > data['credits_done']: 
+                        gap = data['credits_total'] - data['credits_done']
+                        st.warning(f"{gap} kredi açığı var.")
+                    else: 
+                        st.write("Tamamlandı 🎉")
 
-# -----------------------------------------------------------------------------
-# TAB 1: RECOMMENDATION ENGINE (ÖNERİ MOTORU)
-# -----------------------------------------------------------------------------
-with tab1:
-    st.header("Gelecek Dönem İçin Ders Önerileri")
-    
-    # --- A. Odak Alanı Seçimi (Subject Focus) ---
-    st.subheader("🎯 Odak Alanı")
-    
-    # Tüm programları (Major+Minor) tek listede topla
-    all_programs = {}
-    
-    # Major Döngüsü
-    for m in major_data['faculties']:
-        for p in m['programs']:
-            all_programs[f"{p['name']} (Major)"] = {
-                'keywords': p.get('keywords', []),
-                'codes': p.get('subject_codes', []) 
-            }
-            
-    # Minor Döngüsü
-    for m in minor_data['faculties']:
-        for p in m['programs']:
-            all_programs[f"{p['name']} (Minor)"] = {
-                'keywords': p.get('keywords', []),
-                'codes': p.get('subject_codes', [])
-            }
-            
-    selected_focus = st.selectbox(
-        "Hangi alana yönelik dersler önerilsin?",
-        options=list(all_programs.keys()),
-        index=0 
-    )
-    
-    # Seçilen programın verilerini çek
-    program_data = all_programs[selected_focus]
-    active_keywords = program_data['keywords']
-    allowed_codes = program_data['codes']
-    
-    # Bilgi Çubuğu
-    st.caption(f"Filtreler: {', '.join(active_keywords[:5])}...")
-    st.caption(f"İzin Verilen Kodlar: {', '.join(allowed_codes)}")
+    else:
+        st.info("Bu modül sadece DSA için aktiftir.")
 
+# --- TAB 2: ÖNERİ MOTORU (Dinamik) ---
+with tab_rec:
+    st.header(f"📅 {current_term} Dönemi Tavsiyeleri")
+    all_progs = {f"{p['name']} ({m['short_code']})": {'keys': p['keywords'], 'codes': p['subject_codes']} 
+                 for m in major_data.get('faculties', []) for p in m['programs']}
+    target_focus = st.selectbox("İlgi Alanı Seç:", list(all_progs.keys()))
+    active_keys = all_progs[target_focus]['keys']
+    
     if st.button("Analizi Başlat", type="primary"):
-        with st.spinner('Yapay Zeka dersleri analiz ediyor...'):
-            df = courses_df.copy()
+        with st.spinner('Müfredat, Ön Koşullar ve Yapay Zeka çalışıyor...'):
+            audit_report, _ = run_degree_audit(taken_courses, dsa_requirements)
+            audit_data = {'critical': set(), 'pool': set()}
+            if audit_report:
+                audit_data['critical'].update(audit_report['Required Courses']['missing'])
+                audit_data['critical'].update(audit_report['University Courses']['missing'])
+                audit_data['pool'].update([c['code'] for c in dsa_requirements['requirements']['core_electives']['pool_objects']])
 
-            # ---------------------------------------------------------
-            # 1. TEMEL FİLTRELER (Gürültü Temizliği)
-            # ---------------------------------------------------------
-            
-            # Recit & Lab Filtresi (Regex: Sonu R veya L ile biten 3 haneli kodlar)
-            df = df[~df['Course Code'].str.contains(r"\d{3}[RL]$", regex=True, na=False)]
-            
-            # İsim Filtresi (Adında Recitation/Lab geçenleri at)
-            exclude_keywords = ["Recitation", "Laboratory", " Lab ", "Discussion"]
-            pattern = '|'.join(exclude_keywords)
-            df = df[~df['Course Name'].str.contains(pattern, case=False, na=False)]
-            
-            # Seviye Filtresi
-            if level_choice.startswith("Lisans"):
-                df = df[df['Level'] < 500]
-            else:
-                df = df[df['Level'] >= 400]
-
-            # Dönem Filtresi
-            if "Güz" in term_choice or "Fall" in term_choice:
-                df = df[df['Term'].str.contains("Fall", case=False, na=False)]
-            elif "Bahar" in term_choice or "Spring" in term_choice:
-                df = df[df['Term'].str.contains("Spring", case=False, na=False)]
-            
-            # ---------------------------------------------------------
-            # 2. VERİ HAZIRLIĞI
-            # ---------------------------------------------------------
-            
-            # Metin Temizliği
-            cols_to_clean = ['Description', 'Restrictions', 'Prerequisites', 'Corequisites']
-            for col in cols_to_clean:
-                if col in df.columns:
-                    df[col] = df[col].apply(sanitize_text)
-            
-            # Transkript Kontrolü (Alınanları Çıkar)
-            df = df[~df['Course Code'].isin(taken_courses)]
-            
-            # Ön Koşul (Logic) Kontrolü
-            df[['Status', 'Missing_Reqs']] = df.apply(
-                lambda r: pd.Series(check_smart_logic(r, taken_courses)), axis=1
+            recs = get_recommendations(
+                courses_df, 
+                {'year': student_year, 'term': current_term, 'level': level_choice, 'taken': taken_courses},
+                audit_data, 
+                " ".join(active_keys)
             )
             
-            # ---------------------------------------------------------
-            # 3. AI MOTORU & HİBRİT PUANLAMA
-            # ---------------------------------------------------------
-            
-            # A. ML ile İçerik Benzerliği Hesapla
-            user_query = " ".join(active_keywords)
-            ml_scores = calculate_ml_scores(df, user_query)
-            df['ML_Score'] = ml_scores
-            
-            # B. Hibrit Skorlama Fonksiyonu
-            def calculate_hybrid_score(row, current_year):
-                # Başlangıç puanı Yapay Zeka'dan gelir
-                score = row['ML_Score']
-                reasons = []
-                
-                # Eğer ML skoru yüksekse açıklama ekle
-                if score > 15:
-                    reasons.append(f"İçerik Uyumu (%{int(score)})")
-                
-                # Zincirleme Bonusu (Prerequisite varsa ve sağlanmışsa)
-                prereq_text = str(row['Prerequisites']).lower()
-                # Basit kontrol: İçinde ders kodu formatı (CS 201 gibi) var mı?
-                if re.search(r"[a-z]{2,5}\s*\d{3,4}", prereq_text):
-                    score += 20
-                    reasons.append("Zincir Ders (+20)")
-                
-                # Sınıf Uyumu (Year Relevance)
-                try:
-                    code_num = int(re.search(r"(\d+)", str(row['Course Code'])).group(1))
-                    level = code_num // 100
-                    
-                    if current_year == 1 and level >= 4: score -= 30  # 1. sınıfa 4. sınıf dersi önerme
-                    if level == current_year or level == current_year + 1:
-                        score += 10
-                        # reasons.append("Sınıfına Uygun")
-                except:
-                    pass
-
-                # Bölüm Kodu Kontrolü (Allowed Codes)
-                # Dersin kodu izin verilenler listesinde değilse puan kır
-                course_subject = row['Course Code'].split()[0]
-                if course_subject not in allowed_codes:
-                    score -= 50
-
-                return pd.Series([score, " + ".join(reasons)])
-
-            # Fonksiyonu Uygula
-            score_results = df.apply(
-                lambda r: calculate_hybrid_score(r, student_year), axis=1
-            )
-            df['Score'] = score_results[0]
-            df['Why'] = score_results[1]
-            
-            # ---------------------------------------------------------
-            # 4. SONUÇ GÖSTERİMİ
-            # ---------------------------------------------------------
-            
-            MIN_SCORE_THRESHOLD = 20 # ML skorları üzerine bonuslar eklendiği için barajı ayarladık
-            
-            final_df = df[
-                (df['Status'] == 'READY') & 
-                (df['Score'] >= MIN_SCORE_THRESHOLD) 
-            ].sort_values(by='Score', ascending=False)
-  
-            final_df = final_df.head(20)
-
-            if final_df.empty:
-                st.warning(f"Kriterlere uygun ders bulunamadı (Min Puan: {MIN_SCORE_THRESHOLD}). İlgi alanını veya dönemi değiştirmeyi dene.")
-            else:
-                st.success(f"Yapay Zeka senin için en uygun **{len(final_df)}** dersi buldu.")
+            if not recs.empty:
+                st.success(f"Akademik öncelik ve ilgi alanına göre {len(recs)} ders sıralandı.")
                 
                 st.dataframe(
-                    final_df[['Course Code', 'Course Name', 'Score', 'Why', 'Description']],
+                    # 'Explanation' sütununu buraya ekledik
+                    recs[['Course Code', 'Course Name', 'Category', 'Final_Score', 'Explanation']],
                     column_config={
-                        "Score": st.column_config.ProgressColumn("Uygunluk", format="%d", min_value=0, max_value=100),
-                        "Why": st.column_config.TextColumn("Eşleşme Nedeni", width="medium"),
-                        "Description": st.column_config.TextColumn("Ders İçeriği", width="large")
+                        "Category": st.column_config.TextColumn("Durum", width="small"),
+                        "Final_Score": st.column_config.ProgressColumn("Öncelik", format="%d", min_value=0, max_value=100),
+                        # Explanation sütununu 'Neden?' başlığıyla gösteriyoruz
+                        "Explanation": st.column_config.TextColumn("Neden Önerildi?", width="large"),
+                        "Course Name": st.column_config.TextColumn("Ders Adı", width="medium")
                     },
                     hide_index=True
                 )
+            else:
+                st.warning("Bu kriterlere uygun ders bulunamadı.")
 
-# -----------------------------------------------------------------------------
-# TAB 2: SEARCH ENGINE (ARAMA)
-# -----------------------------------------------------------------------------
-with tab2:
-    st.header("İlgi Alanına Göre Program Ara")
-    keyword = st.text_input("Anahtar Kelime (Örn: Artificial Intelligence, Marketing)", "")
-    
-    if keyword:
-        results = advisor.find_program_by_keyword(keyword)
-        if results:
-            for res in results:
-                color = "green" if res['type'] == "Major" else "blue"
-                with st.expander(f":{color}[{res['type']}] **{res['program']}**"):
-                    st.write(f"Eşleşen Konular: {', '.join(res['matched_keywords'])}")
-        else:
-            st.warning("Sonuç bulunamadı.")
 
-# -----------------------------------------------------------------------------
-# TAB 3: SYNERGY ANALYSIS (UYUM)
-# -----------------------------------------------------------------------------
-with tab3:
-    st.header("Major-Minor Uyumu")
-    major_options = {m['name']: m['id'] for m in advisor.majors}
-    selected = st.selectbox("Ana Dal Seç:", list(major_options.keys()))
-    
-    if selected:
-        synergies = advisor.calculate_synergy(major_options[selected])
-        col1, col2 = st.columns(2)
-        for i, rec in enumerate(synergies[:4]):
-            with (col1 if i % 2 == 0 else col2):
-                st.success(f"**{rec['minor_name']}** (Skor: {rec['score']})")
-                st.caption(f"Ortak Dersler: {', '.join(rec['shared_codes'])}")
+# --- TAB 3: ARAMA ---
+with tab_search:
+    st.header("Bölüm Keşfi")
+    kw = st.text_input("Anahtar Kelime:")
+    if kw:
+        results = advisor.find_program_by_keyword(kw)
+        for res in results:
+            st.write(f"**{res['program']}** - Skor: {res['score']}")

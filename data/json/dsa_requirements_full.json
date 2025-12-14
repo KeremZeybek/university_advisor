@@ -2,6 +2,7 @@
     "program_code": "DSA",
     "program_name": "Data Science and Analytics",
     "version": "Admit Term: Fall 2023-2024",
+    "total_su_credits_required": 125,
     "requirements": {
         "university_courses": {
             "name": "University Courses",
@@ -11,148 +12,125 @@
                 {
                     "code": "AL 102",
                     "name": "Academic Literacies",
-                    "su_credit": 3,
-                    "ects_credit": 5
+                    "su_credit": 3
                 },
                 {
                     "code": "CIP 101N",
                     "name": "Civic Involvement Projects I-N",
-                    "su_credit": 0,
-                    "ects_credit": 1
+                    "su_credit": 0
                 },
                 {
                     "code": "HIST 191",
                     "name": "Principles of Atatürk and the History of the Turkish Revolution I",
-                    "su_credit": 2,
-                    "ects_credit": 3
+                    "su_credit": 2
                 },
                 {
                     "code": "HIST 192",
                     "name": "Principles of Atatürk and the History of the Turkish Revolution II",
-                    "su_credit": 2,
-                    "ects_credit": 3
+                    "su_credit": 2
                 },
                 {
                     "code": "HUM 201",
                     "name": "Major Works of Literature",
-                    "su_credit": 3,
-                    "ects_credit": 5
+                    "su_credit": 3
                 },
                 {
                     "code": "HUM 202",
                     "name": "Major Works of Western Art",
-                    "su_credit": 3,
-                    "ects_credit": 5
+                    "su_credit": 3
                 },
                 {
                     "code": "HUM 207",
                     "name": "Major Works of Western Philosophy",
-                    "su_credit": 3,
-                    "ects_credit": 5
+                    "su_credit": 3
                 },
                 {
                     "code": "HUM 311",
                     "name": "Major Works of Literature: The World Before Modernity",
-                    "su_credit": 3,
-                    "ects_credit": 5
+                    "su_credit": 3
                 },
                 {
                     "code": "HUM 312",
                     "name": "Major Works of Modern Art",
-                    "su_credit": 3,
-                    "ects_credit": 5
+                    "su_credit": 3
                 },
                 {
                     "code": "HUM 317",
                     "name": "Major Works of Moral Philosophy",
-                    "su_credit": 3,
-                    "ects_credit": 5
+                    "su_credit": 3
                 },
                 {
                     "code": "HUM 321",
                     "name": "Major Works of Literature: The Modern World",
-                    "su_credit": 3,
-                    "ects_credit": 5
+                    "su_credit": 3
                 },
                 {
                     "code": "HUM 322",
                     "name": "Major Works of Art: The World Before Modernity",
-                    "su_credit": 3,
-                    "ects_credit": 5
+                    "su_credit": 3
                 },
                 {
                     "code": "HUM 371",
                     "name": "Major Works of Literature: The Islamic World",
-                    "su_credit": 3,
-                    "ects_credit": 5
+                    "su_credit": 3
                 },
                 {
                     "code": "IF 100",
                     "name": "Computational Approaches to Problem Solving",
-                    "su_credit": 3,
-                    "ects_credit": 5
+                    "su_credit": 3
                 },
                 {
                     "code": "MATH 101",
                     "name": "Calculus I",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MATH 102",
                     "name": "Calculus II",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "NS 101",
                     "name": "Science of Nature I",
-                    "su_credit": 4,
-                    "ects_credit": 6
+                    "su_credit": 4
                 },
                 {
                     "code": "NS 102",
                     "name": "Science of Nature II",
-                    "su_credit": 4,
-                    "ects_credit": 6
+                    "su_credit": 4
                 },
                 {
                     "code": "PROJ 201",
                     "name": "Undergraduate Project Course",
-                    "su_credit": 1,
-                    "ects_credit": 1
+                    "su_credit": 1
                 },
                 {
                     "code": "SPS 101",
                     "name": "Humanity and Society I",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "SPS 102",
                     "name": "Humanity and Society II",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "SPS 303",
                     "name": "Law and Ethics",
-                    "su_credit": 3,
-                    "ects_credit": 5
+                    "su_credit": 3
                 },
                 {
                     "code": "TLL 101",
                     "name": "Turkish Language and Literature I",
-                    "su_credit": 2,
-                    "ects_credit": 3
+                    "su_credit": 2
                 },
                 {
                     "code": "TLL 102",
                     "name": "Turkish Language and Literature II",
-                    "su_credit": 2,
-                    "ects_credit": 3
+                    "su_credit": 2
                 }
-            ]
+            ],
+            "rule": "1XX courses + SPS 303 + HUM 2XX required."
         },
         "major_required": {
             "name": "Required Courses",
@@ -162,82 +140,70 @@
                 {
                     "code": "CS 210",
                     "name": "Introduction to Data Science",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CS 412",
                     "name": "Machine Learning",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "DSA 201",
                     "name": "Advanced Programming for Data Science",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "DSA 210",
                     "name": "Introduction to Data Science",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "DSA 301",
                     "name": "Data Visualization",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "DSA 395",
                     "name": "Internship Project",
-                    "su_credit": 0,
-                    "ects_credit": 5
+                    "su_credit": 0
                 },
                 {
                     "code": "DSA 492",
                     "name": "Graduation Project",
-                    "su_credit": 3,
-                    "ects_credit": 5
+                    "su_credit": 3
                 },
                 {
                     "code": "ECON 301",
                     "name": "Econometrics",
-                    "su_credit": 3,
-                    "ects_credit": 7
+                    "su_credit": 3
                 },
                 {
                     "code": "MATH 201",
                     "name": "Linear Algebra",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MATH 203",
                     "name": "Introduction to Probability",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MATH 212",
                     "name": "Linear Algebra and Differential Equations",
-                    "su_credit": 4,
-                    "ects_credit": 7
+                    "su_credit": 4
                 },
                 {
                     "code": "MATH 306",
                     "name": "Statistical Modelling",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "OPIM 390",
                     "name": "Introduction to Business Analytics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 }
-            ]
+            ],
+            "rule": "DSA 210/CS 210 equivalent. MATH 201/212 equivalent."
         },
         "core_electives": {
             "name": "Core Electives",
@@ -247,200 +213,167 @@
                 {
                     "code": "BIO 310",
                     "name": "Introduction to Bioinformatics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CS 306",
                     "name": "Database Systems",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CS 404",
                     "name": "Artificial Intelligence",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CS 445",
                     "name": "Natural Language Processing",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CS 455",
                     "name": "Large Language Models: Theoretical Foundations and Practical Applications",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "DSA 428",
                     "name": "Big Data Processing",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "DSA 440",
                     "name": "Data and Artificial Intelligence (AI) Ethics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "DSA 473",
                     "name": "Time Series and Forecasting Models",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ECON 401",
                     "name": "Applied Econometrics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ECON 494",
                     "name": "Spatial Data Science",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ECON 495",
                     "name": "Machine Learning for Policy Evaluation",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "EE 311",
                     "name": "Introduction to Signal Processing and Information Systems",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "EE 417",
                     "name": "Computer Vision",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ENS 208",
                     "name": "Introduction to Industrial Engineering",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ENS 210",
                     "name": "Computational Biology",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ENS 211",
                     "name": "Signals",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ENS 311",
                     "name": "Numerical Analysis",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ENS 409",
                     "name": "Numerical Analysis",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IE 305",
                     "name": "Simulation",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IE 311",
                     "name": "Operations Research I",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IE 415",
                     "name": "Decision Support Systems",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IE 451",
                     "name": "Data Analytics and Optimization",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MATH 204",
                     "name": "Discrete Mathematics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MKTG 414",
                     "name": "Marketing Analytics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "OPIM 302",
                     "name": "Management Information Systems",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "OPIM 402",
                     "name": "Optimization Modeling in Business Analytics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "OPIM 408",
                     "name": "Retail Operations and Marketing Analytics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "OPIM 410",
                     "name": "Decision Making Under Uncertainty",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSIR 311",
                     "name": "Research Methods for Political Science and International Relations I",
-                    "su_credit": 3,
-                    "ects_credit": 7
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 202",
                     "name": "Research Methods and Statistics for Psychology I",
-                    "su_credit": 3,
-                    "ects_credit": 7
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 306",
                     "name": "Testing and Measurement",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "TS 320",
                     "name": "Digital Humanities",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 345",
                     "name": "Creative Coding",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 }
             ]
         },
@@ -452,236 +385,197 @@
                 {
                     "code": "CS 415",
                     "name": "Introduction to deep learning",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CS 449",
                     "name": "Human Computer Interaction",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ECON 201",
                     "name": "Games and Strategies",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ECON 204",
                     "name": "Microeconomics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ECON 321",
                     "name": "Education Economics and Policy",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ECON 323",
                     "name": "Energy and Environmental Economics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ECON 430",
                     "name": "Labor Economics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "EE 410",
                     "name": "Information and Coding Theory",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "FIN 301",
                     "name": "Financial Management",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "FIN 401",
                     "name": "Corporate Finance",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "FIN 402",
                     "name": "Investments",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IE 312",
                     "name": "Operations Research II",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IE 404",
                     "name": "Digital Transformation",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IE 405",
                     "name": "Decision Analysis",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IE 413",
                     "name": "Information Systems",
-                    "su_credit": 3,
-                    "ects_credit": 5
+                    "su_credit": 3
                 },
                 {
                     "code": "IR 391",
                     "name": "International Political Economy",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MATH 484",
                     "name": "Mathematical Introduction to Quantum Algorithms and Post-Quantum Cryptography",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MGMT 404",
                     "name": "Technology Management",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MGMT 421",
                     "name": "Technology Awareness and Implications of Technology Trends to Business Life and Processes",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MKTG 401",
                     "name": "Marketing Research",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MKTG 404",
                     "name": "Digital Marketing",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MKTG 405",
                     "name": "Marketing Strategy",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MKTG 409",
                     "name": "Pricing in Marketing",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MKTG 410",
                     "name": "Social Media Marketing",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MKTG 413",
                     "name": "AI for Consumers and Society",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "OPIM 404",
                     "name": "Business Process Analysis and Design",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "OPIM 405",
                     "name": "Management Decision Support Systems",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "OPIM 406",
                     "name": "Customer Relationship Management using Location Intelligence",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "OPIM 407",
                     "name": "Advanced Business Analytics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "OPIM 409",
                     "name": "Project Management",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 404",
                     "name": "Comparative Party Systems and Electoral Behavior",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSIR 401",
                     "name": "Research Methods for Political Science and International Relations II",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 304",
                     "name": "Research Methods and Statistics for Psychology II",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 305",
                     "name": "Experimental Psychology",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 340",
                     "name": "Social Psychology",
-                    "su_credit": 3,
-                    "ects_credit": 7
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 407",
                     "name": "EEG Methods and Analyses",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 412",
                     "name": "Visual Cognition",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 452",
                     "name": "Cognitive Neuroscience",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 439",
                     "name": "Envisioning Information",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 }
             ]
         },
@@ -693,3713 +587,3094 @@
                 {
                     "code": "ACC 201",
                     "name": "Introduction to Financial Accounting and Reporting",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ACC 301",
                     "name": "Managerial Accounting",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ACC 401",
                     "name": "Intermediate Financial Accounting and Reporting",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ACC 402",
                     "name": "Advanced Issues in Financial Accounting",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ACC 403",
                     "name": "Auditing",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ACC 404",
                     "name": "International Accounting",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ACC 405",
                     "name": "Financial Statement Analysis",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ACC 406",
                     "name": "Intermediate Managerial Accounting",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ACC 450",
                     "name": "Selected Topics in Accounting I",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ACC 451",
                     "name": "Selected Topics in Accounting II",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ANTH 214",
                     "name": "Anthropology as Cultural Critique",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ANTH 255",
                     "name": "Local Cultures, Global Forces",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ANTH 321",
                     "name": "Anthropology of Migration and the City",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ANTH 326",
                     "name": "Anthropology of the Body",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ANTH 340",
                     "name": "Anthropology of Gender and Sexuality",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ANTH 468",
                     "name": "Ethnography: Fieldwork and Writing in Antropology",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "BIO 301",
                     "name": "Introduction to Molecular Biology",
-                    "su_credit": 4,
-                    "ects_credit": 7
+                    "su_credit": 4
                 },
                 {
                     "code": "BIO 303",
                     "name": "Genetics",
-                    "su_credit": 4,
-                    "ects_credit": 7
+                    "su_credit": 4
                 },
                 {
                     "code": "BIO 304",
                     "name": "Biological Function and Structure",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "BIO 306",
                     "name": "Microbiology",
-                    "su_credit": 4,
-                    "ects_credit": 7
+                    "su_credit": 4
                 },
                 {
                     "code": "BIO 308",
                     "name": "Plant Physiology",
-                    "su_credit": 3,
-                    "ects_credit": 7
+                    "su_credit": 3
                 },
                 {
                     "code": "BIO 321",
                     "name": "Biochemistry I",
-                    "su_credit": 4,
-                    "ects_credit": 7
+                    "su_credit": 4
                 },
                 {
                     "code": "BIO 322",
                     "name": "Biochemistry II",
-                    "su_credit": 3,
-                    "ects_credit": 5
+                    "su_credit": 3
                 },
                 {
                     "code": "BIO 330",
                     "name": "Environmental Plant Biology",
-                    "su_credit": 3,
-                    "ects_credit": 5
+                    "su_credit": 3
                 },
                 {
                     "code": "BIO 332",
                     "name": "Cell Biology",
-                    "su_credit": 4,
-                    "ects_credit": 7
+                    "su_credit": 4
                 },
                 {
                     "code": "BIO 335",
                     "name": "Experimental Techniques in Biology",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "BIO 363",
                     "name": "Ecology",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "BIO 370",
                     "name": "Mammalian Cell Culture",
-                    "su_credit": 3,
-                    "ects_credit": 7
+                    "su_credit": 3
                 },
                 {
                     "code": "BIO 404",
                     "name": "Plant Biotechnology",
-                    "su_credit": 3,
-                    "ects_credit": 5
+                    "su_credit": 3
                 },
                 {
                     "code": "BIO 407",
                     "name": "Multicellular Organization",
-                    "su_credit": 3,
-                    "ects_credit": 5
+                    "su_credit": 3
                 },
                 {
                     "code": "BIO 415",
                     "name": "Plant Nutrition",
-                    "su_credit": 3,
-                    "ects_credit": 5
+                    "su_credit": 3
                 },
                 {
                     "code": "BIO 421",
                     "name": "Tissue Engineering",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "BIO 423",
                     "name": "Neurobiology",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "BIO 436",
                     "name": "Cancer Biology",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "BIO 444",
                     "name": "Bioengineering",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "BIO 445",
                     "name": "Plant Tissue Culture Techniques",
-                    "su_credit": 3,
-                    "ects_credit": 7
+                    "su_credit": 3
                 },
                 {
                     "code": "BIO 446",
                     "name": "Biology of Aging",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "BIO 452",
                     "name": "Immunology",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "BIO 467",
                     "name": "Signal Transduction",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "BIO 468",
                     "name": "Gene Regulation & Diseas",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CHEM 202",
                     "name": "Chemical Kinetics",
-                    "su_credit": 4,
-                    "ects_credit": 7
+                    "su_credit": 4
                 },
                 {
                     "code": "CHEM 212",
                     "name": "General Chemistry for Engineers",
-                    "su_credit": 3,
-                    "ects_credit": 7
+                    "su_credit": 3
                 },
                 {
                     "code": "CHEM 301",
                     "name": "Inorganic Chemistry",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CHEM 302",
                     "name": "Analytical Chemistry",
-                    "su_credit": 4,
-                    "ects_credit": 7
+                    "su_credit": 4
                 },
                 {
                     "code": "CHEM 369",
                     "name": "Chemistry of Transformable Materials",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CHEM 405",
                     "name": "Electrochemistry",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CHEM 421",
                     "name": "Clean Coal Technology",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CIP 101",
                     "name": "Civic Involvement Projects I",
-                    "su_credit": 0,
-                    "ects_credit": 2
+                    "su_credit": 0
                 },
                 {
                     "code": "CONF 300",
                     "name": "Conflict Analysis and Resolution",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CONF 400",
                     "name": "International Conflict and Peace",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CONF 431",
                     "name": "Conflict Resolution Practice",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CS 201",
                     "name": "Programming Fundamentals",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CS 204",
                     "name": "Advanced Programming",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CS 300",
                     "name": "Data Structures",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CS 301",
                     "name": "Algorithms",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CS 302",
                     "name": "Formal Languages and Automata Theory",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CS 303",
                     "name": "Logic and Digital System Design",
-                    "su_credit": 4,
-                    "ects_credit": 7
+                    "su_credit": 4
                 },
                 {
                     "code": "CS 305",
                     "name": "Programming Languages",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CS 307",
                     "name": "Operating Systems",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CS 308",
                     "name": "Software Engineering",
-                    "su_credit": 4,
-                    "ects_credit": 7
+                    "su_credit": 4
                 },
                 {
                     "code": "CS 310",
                     "name": "Mobile Application Development",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CS 400",
                     "name": "Logic in Computer Science",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CS 401",
                     "name": "Computer Architectures",
-                    "su_credit": 4,
-                    "ects_credit": 6
+                    "su_credit": 4
                 },
                 {
                     "code": "CS 402",
                     "name": "Compiler Design",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CS 403",
                     "name": "Distributed Systems",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CS 405",
                     "name": "Computer Graphics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CS 406",
                     "name": "Parallel Computing",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CS 407",
                     "name": "Theory of Computation",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CS 408",
                     "name": "Computer Networks",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CS 411",
                     "name": "Cryptography",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CS 414",
                     "name": "Network Science",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CS 419",
                     "name": "Digital Image and Video Analysis",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CS 432",
                     "name": "Computer and Network Security",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CS 435",
                     "name": "Quantum Programming I",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CS 436",
                     "name": "Cloud Computing",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CS 437",
                     "name": "Cybersecurity Practices and Applications",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CS 438",
                     "name": "Blockchain: Security and Applications",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CS 439",
                     "name": "Software Verification and Validation",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CS 440",
                     "name": "Quantum Programming II",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CS 442",
                     "name": "Software Design Patterns",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CS 447",
                     "name": "Immersive Systems Development",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CS 460",
                     "name": "Automated Debugging",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CULT 322",
                     "name": "Youth Culture",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CULT 327",
                     "name": "Postcolonial Theory and Its Discontents",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CULT 355",
                     "name": "Urban Spaces and Cultures",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CULT 361",
                     "name": "Oral History",
-                    "su_credit": 3,
-                    "ects_credit": 7
+                    "su_credit": 3
                 },
                 {
                     "code": "CULT 364",
                     "name": "Topics in Memory Studies",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CULT 368",
                     "name": "Globalization and Health Inequalities",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CULT 370",
                     "name": "Everyday Life",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CULT 384",
                     "name": "Political Ecology and Society",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CULT 391",
                     "name": "Turkish Culture: Critical Perspectives",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CULT 399",
                     "name": "Independent Study",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CULT 432",
                     "name": "Modernism/Postmodernism",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CULT 434",
                     "name": "Advanced Cultural Theory",
-                    "su_credit": 3,
-                    "ects_credit": 7
+                    "su_credit": 3
                 },
                 {
                     "code": "CULT 435",
                     "name": "Representations of Violence",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CULT 451",
                     "name": "Nation, History and Culture in Museums",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CULT 453",
                     "name": "Spaces of Migration",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CULT 462",
                     "name": "Postsocialism",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CULT 491",
                     "name": "Advanced Topics in Cultural Studies I",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CULT 492",
                     "name": "Advanced Topics in Cultural Studies II",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "CULT 493",
                     "name": "Thematic Approaches to Contemporary Turkish Culture",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ECON 202",
                     "name": "Macroeconomics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ECON 310",
                     "name": "Game Theory",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ECON 312",
                     "name": "Behavioral Economics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ECON 320",
                     "name": "Public Economics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ECON 322",
                     "name": "Health Economics and Policy",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ECON 330",
                     "name": "Industrial Organization",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ECON 340",
                     "name": "International Economics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ECON 345",
                     "name": "International Finance",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ECON 350",
                     "name": "Financial Institutions and Markets",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ECON 360",
                     "name": "Advanced Macroeconomics",
-                    "su_credit": 3,
-                    "ects_credit": 7
+                    "su_credit": 3
                 },
                 {
                     "code": "ECON 370",
                     "name": "Advanced Microeconomics",
-                    "su_credit": 3,
-                    "ects_credit": 7
+                    "su_credit": 3
                 },
                 {
                     "code": "ECON 399",
                     "name": "Independent Study",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ECON 400",
                     "name": "History of Economic Thought",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ECON 405",
                     "name": "Law and Economics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ECON 407",
                     "name": "The Political Economy of European Integration",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ECON 414",
                     "name": "Applied Macroeconomics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ECON 415",
                     "name": "Advanced Industrial Organization",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ECON 420",
                     "name": "Growth and Development",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ECON 435",
                     "name": "Discrete Choice Methods",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ECON 481",
                     "name": "Advanced Microeconomic Theory I",
-                    "su_credit": 4,
-                    "ects_credit": 7
+                    "su_credit": 4
                 },
                 {
                     "code": "ECON 482",
                     "name": "Advanced Microeconomic Theory II",
-                    "su_credit": 4,
-                    "ects_credit": 7
+                    "su_credit": 4
                 },
                 {
                     "code": "ECON 483",
                     "name": "Advanced Macroeconomic Theory I",
-                    "su_credit": 4,
-                    "ects_credit": 7
+                    "su_credit": 4
                 },
                 {
                     "code": "ECON 484",
                     "name": "Advanced Macroeconomic Theory II",
-                    "su_credit": 4,
-                    "ects_credit": 7
+                    "su_credit": 4
                 },
                 {
                     "code": "ECON 488",
                     "name": "Matchings and Markets",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ECON 492",
                     "name": "Seminar on the Turkish Economy",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "EE 200",
                     "name": "Electronic Circuit Implementations",
-                    "su_credit": 2,
-                    "ects_credit": 2
+                    "su_credit": 2
                 },
                 {
                     "code": "EE 202",
                     "name": "Electronic Circuits II",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "EE 301",
                     "name": "Electromagnetics II",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "EE 302",
                     "name": "Digital Integrated Circuits",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "EE 303",
                     "name": "Analog Integrated Circuits",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "EE 306",
                     "name": "Introduction to Radio Frequency and Microwave Design",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "EE 307",
                     "name": "Semiconductor Physics and Devices",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "EE 308",
                     "name": "Microcomputer Based System Design",
-                    "su_credit": 4,
-                    "ects_credit": 7
+                    "su_credit": 4
                 },
                 {
                     "code": "EE 310",
                     "name": "Hardware Description Languages",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "EE 312",
                     "name": "Discrete-Time Signals and Systems",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "EE 313",
                     "name": "Introduction to Communication Systems",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "EE 314",
                     "name": "Digital Communications",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "EE 401",
                     "name": "Very Large Scale Integrated System Design I",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "EE 402",
                     "name": "Very Large Scale Integrated System Design II",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "EE 403",
                     "name": "Optoelectronics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "EE 404",
                     "name": "Introduction to Microelectromechanical Systems",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "EE 405",
                     "name": "Communication Circuit Design",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "EE 406",
                     "name": "Antennas and Propagation for Wireless Communication",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "EE 407",
                     "name": "Microelectronic Fabrication",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "EE 408",
                     "name": "Modeling of Semiconductor Devices",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "EE 409",
                     "name": "Microwaves",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "EE 411",
                     "name": "RF Integrated Circuits.",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "EE 413",
                     "name": "Wireless Communications",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "EE 414",
                     "name": "Multimedia  Communication",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "EE 415",
                     "name": "Digital Speech and Audio Processing",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "EE 419",
                     "name": "Signal Processing Design and Implementation",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "EE 440",
                     "name": "Mixed-Signal Integrated Circuits",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "EE 444",
                     "name": "Optics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "EE 473",
                     "name": "Biomedical Instrumentation",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ENRG 220",
                     "name": "World Energy Outlook: The Coming Year",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ENRG 301",
                     "name": "Energy Systems and Environment",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ENRG 315",
                     "name": "Energy",
-                    "su_credit": 3,
-                    "ects_credit": 5
+                    "su_credit": 3
                 },
                 {
                     "code": "ENRG 322",
                     "name": "Battery Science and Engineering",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ENRG 401",
                     "name": "Energy: Supply Chain, Economics and Geopolitics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ENRG 420",
                     "name": "Energy Systems Optimization",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ENRG 422",
                     "name": "Battery Science and Engineering",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ENRG 423",
                     "name": "Electric Power Systems: Operation, Technology and Economics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ENRG 424",
                     "name": "Cell Design, Modelling and Battery Pack Development",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ENRG 426",
                     "name": "Battery Management Systems",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ENS 201",
                     "name": "Electromagnetics I",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ENS 202",
                     "name": "Thermodynamics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ENS 203",
                     "name": "Electronic Circuits I",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ENS 204",
                     "name": "Mechanics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ENS 205",
                     "name": "Introduction to Materials Science",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ENS 206",
                     "name": "Systems Modeling and Control",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ENS 207",
                     "name": "Introduction to Energy Systems",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ENS 209",
                     "name": "Introduction to Computer Aided Drafting and Solid Modeling",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ENS 214",
                     "name": "Dynamics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ENS 216",
                     "name": "Information Systems: A Historical Perspective",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ENS 222",
                     "name": "Biological Circuits and Molecular Machines",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ENS 302",
                     "name": "Technology and Society",
-                    "su_credit": 3,
-                    "ects_credit": 5
+                    "su_credit": 3
                 },
                 {
                     "code": "ENS 303",
                     "name": "Introduction to Space Technology",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ENS 309",
                     "name": "Computer Aided Engineering",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ENS 410",
                     "name": "Advanced Solid Modeling Techniques",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ENS 413",
                     "name": "Experimental Methods in Nanoscience I",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ENS 414",
                     "name": "Experimental Methods in Nanoscience II",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ENS 416",
                     "name": "Introduction to Scanning Probe Microscopy",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ENS 4803",
                     "name": "Special Topics in FENS: Nanobiotechnology",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ENS 491",
                     "name": "Graduation Project (Design)",
-                    "su_credit": 1,
-                    "ects_credit": 2
+                    "su_credit": 1
                 },
                 {
                     "code": "ENS 492",
                     "name": "Graduation Project  (Implementation)",
-                    "su_credit": 3,
-                    "ects_credit": 5
+                    "su_credit": 3
                 },
                 {
                     "code": "ENT 201",
                     "name": "The Foundations of Entrepreneurship",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "FILM 231",
                     "name": "Introduction to Film Studies",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "FILM 331",
                     "name": "Approaches to Film Studies",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "FILM 335",
                     "name": "Critical Perspectives on Turkish Cinema",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "FILM 345",
                     "name": "International Cinemas",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "FILM 390",
                     "name": "Topics in Film Studies",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "FILM 424",
                     "name": "Anthropology and Film",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "FILM 432",
                     "name": "Vision, Representation and Cinema",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "FILM 435",
                     "name": "Documentary: Context and Practice-I",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "FILM 436",
                     "name": "Documentary Context and Practice-II",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "FILM 452",
                     "name": "Psychoanalysis and Film",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "FIN 403",
                     "name": "Derivative Securities",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "FIN 404",
                     "name": "Multinational Corporate Finance",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "FIN 405",
                     "name": "Corporate Mergers & Acquisitions",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "FIN 406",
                     "name": "Behavioral Finance",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "FIN 407",
                     "name": "Entrepreneurship and Venture Capital",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "FIN 408",
                     "name": "Financial Products",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "FIN 409",
                     "name": "Banking and Financial Intermediation",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "FIN 410",
                     "name": "Financial Technologies",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "FIN 450",
                     "name": "Selected Topics in Finance I",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "FIN 451",
                     "name": "Selected Topics in Finance II",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "FIN 499",
                     "name": "Wealth Management",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "GEN 341",
                     "name": "Gender and Society",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "GEN 343",
                     "name": "Topics In Gender & Sexuality Studies",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "GEN 385",
                     "name": "Migrations and the Family",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "GEN 399",
                     "name": "Independent Study in Gender Studies",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "GEN 410",
                     "name": "Gender and Politics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "GEN 442",
                     "name": "Gendered Memories of War and Political Violence",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "GEN 444",
                     "name": "Gender and Sexuality in Türkiye",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "GEN 480",
                     "name": "Men and Mesculinities",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "HART 234",
                     "name": "Classical Mythology in Art",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "HART 292",
                     "name": "From Modern to Contemporary Art",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "HART 293",
                     "name": "Contemporary Art",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "HART 320",
                     "name": "Women Artists",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "HART 380",
                     "name": "Bauhaus",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "HART 392",
                     "name": "Art in the Age of Transition (from Renaiss. to Early Modern)",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "HART 411",
                     "name": "Art in the age of Revolt: Early Modernity",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "HART 413",
                     "name": "Visual Arts in Türkiye",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "HART 414",
                     "name": "Post 60 Turkish Art",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "HART 426",
                     "name": "Leonardo and Michelangelo: Heroes of the Renaissance",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "HART 432",
                     "name": "Post-1945 American Art",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "HART 450",
                     "name": "Caravaggio",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "HART 480",
                     "name": "Bauhaus",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "HIST 205",
                     "name": "History of the Twentieth Century",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "HIST 233",
                     "name": "The Medieval Hero, East and West",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "HIST 316",
                     "name": "Episodes in the History of Science II",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "HIST 332",
                     "name": "Islamic History: the Middle Period (c.945 - 1500)",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "HIST 335",
                     "name": "The Gunpowder Empires of the Islamic World, ca. 1450-1800",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "HIST 349",
                     "name": "Diplomatic History of the Modern Era II (1945-2004)",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "HIST 371",
                     "name": "History of a City II : Ottoman Istanbul, 1450-1900",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "HIST 439",
                     "name": "Christians In The Ottoman Empire",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "HIST 489",
                     "name": "From Empire to Republic : Turkish Nationalism and the Nation-State",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "HUM 413",
                     "name": "Genres and Styles of Western Music",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "HUM 414",
                     "name": "Orientalism in Western Classical Music",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IE 302",
                     "name": "Stochastic Models in Operations Research",
-                    "su_credit": 4,
-                    "ects_credit": 7
+                    "su_credit": 4
                 },
                 {
                     "code": "IE 303",
                     "name": "Decision Economics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IE 304",
                     "name": "Production and Service Systems Planning and Design",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IE 306",
                     "name": "Human Factors Engineering",
-                    "su_credit": 3,
-                    "ects_credit": 5
+                    "su_credit": 3
                 },
                 {
                     "code": "IE 309",
                     "name": "Manufacturing Processes I",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IE 313",
                     "name": "Operations Research III",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IE 401",
                     "name": "Production and Service Systems Operations",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IE 402",
                     "name": "Integrated Manufacturing Systems",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IE 403",
                     "name": "Quality Planning and Control",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IE 408",
                     "name": "Reliability and Maintenance Analysis",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IE 409",
                     "name": "Project Scheduling and Management",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IE 411",
                     "name": "Modeling and Analysis of Large Systems",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IE 414",
                     "name": "Manufacturing and Digitalization  Strategies",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IE 416",
                     "name": "Additive Manufacturing",
-                    "su_credit": 3,
-                    "ects_credit": 7
+                    "su_credit": 3
                 },
                 {
                     "code": "IE 417",
                     "name": "Facilities and Material Handling Design",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IE 425",
                     "name": "Computational Operations Research",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IE 430",
                     "name": "Logistics Systems Planning and Design",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IE 432",
                     "name": "Stochastic Models in Finance",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IE 435",
                     "name": "Production Dynamics and Control",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IE 436",
                     "name": "Monte Carlo Methods in Finance",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IE 454",
                     "name": "Supply Chain Analysis",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IE 471",
                     "name": "Supply Chain Practice",
-                    "su_credit": 3,
-                    "ects_credit": 5
+                    "su_credit": 3
                 },
                 {
                     "code": "IE 472",
                     "name": "Strategic Decision Making Practice",
-                    "su_credit": 3,
-                    "ects_credit": 5
+                    "su_credit": 3
                 },
                 {
                     "code": "IF 200",
                     "name": "Fantasy, Reality, Science and Society",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IF 201",
                     "name": "Science, Engineering and Politics of Food",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IF 301",
                     "name": "Gender in Science and Technology",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IF 333",
                     "name": "Creativity, Innovation and Entrepreneurship",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IF 402",
                     "name": "Sustainability and Circularity in Materials",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IF 405",
                     "name": "Scientific Investigations into Artworks",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IF 467",
                     "name": "Decision, Psychology and Brain",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IR 201",
                     "name": "International Relations Theory",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IR 301",
                     "name": "Globalization and International Relations",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IR 341",
                     "name": "Global Governance",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IR 342",
                     "name": "Turkish Foreign Policy",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IR 392",
                     "name": "Foreign Policy Analysis",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IR 394",
                     "name": "World Politics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IR 401",
                     "name": "Türkiye and the Middle East",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IR 402",
                     "name": "Türkiye in Europe",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IR 405",
                     "name": "European Foreign Policy",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IR 410",
                     "name": "International Security",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "IR 489",
                     "name": "Human Rights in World Affairs",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "LAW 311",
                     "name": "International Law",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "LAW 312",
                     "name": "Comparative Constitutional Law",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "LAW 404",
                     "name": "Human Rights in the EU",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "LIT 212",
                     "name": "Analyzing Text and Context",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "LIT 252",
                     "name": "Topics in World Literature",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "LIT 320",
                     "name": "Popular Literature",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "LIT 354",
                     "name": "Literature and Immigration",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "LIT 359",
                     "name": "Literature, Ideology and  Resistance",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "LIT 394",
                     "name": "Modern Turkish Literature",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "LIT 440",
                     "name": "Literature and Psychoanalysis",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "LIT 445",
                     "name": "Gender and Sexuality in Literature",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "LIT 492",
                     "name": "Advanced Topics in Turkish Literature",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MATH 202",
                     "name": "Differential Equations",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MATH 206",
                     "name": "Vector Calculus",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MATH 221",
                     "name": "History of Mathematics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MATH 301",
                     "name": "Introduction to Mathematical Analysis",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MATH 302",
                     "name": "Integration",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MATH 305",
                     "name": "Complex Calculus",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MATH 307",
                     "name": "Dynamical Systems",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MATH 311",
                     "name": "Introduction to Algebra",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MATH 317",
                     "name": "Elementary Number Theory",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MATH 318",
                     "name": "Introduction to Combinatorics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MATH 322",
                     "name": "Partial Differential Equations",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MATH 401",
                     "name": "Introduction to Functional Analysis",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MATH 402",
                     "name": "Hilbert Space Techniques",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MATH 409",
                     "name": "Proofs from the Notebook",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MATH 410",
                     "name": "Introduction to Stochastic Calculus",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MATH 414",
                     "name": "Finite Fields and Applications",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MAT 204",
                     "name": "Electrical, Optical and Magnetic Properties of Materials",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MAT 206",
                     "name": "Kinetics of Materials",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MAT 302",
                     "name": "Polymer Chemistry",
-                    "su_credit": 4,
-                    "ects_credit": 7
+                    "su_credit": 4
                 },
                 {
                     "code": "MAT 305",
                     "name": "Polymer Engineering: Fundamentals",
-                    "su_credit": 3,
-                    "ects_credit": 5
+                    "su_credit": 3
                 },
                 {
                     "code": "MAT 306",
                     "name": "Computational Techniques for Materials at the Nano-scale",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MAT 307",
                     "name": "Composite Materials",
-                    "su_credit": 3,
-                    "ects_credit": 7
+                    "su_credit": 3
                 },
                 {
                     "code": "MAT 308",
                     "name": "Phase Equilibria",
-                    "su_credit": 3,
-                    "ects_credit": 5
+                    "su_credit": 3
                 },
                 {
                     "code": "MAT 309",
                     "name": "Transport Phenomena in Materials Processing",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MAT 312",
                     "name": "Materials Characterization",
-                    "su_credit": 4,
-                    "ects_credit": 7
+                    "su_credit": 4
                 },
                 {
                     "code": "MAT 314",
                     "name": "Mechanical Properties of Materials",
-                    "su_credit": 3,
-                    "ects_credit": 5
+                    "su_credit": 3
                 },
                 {
                     "code": "MAT 401",
                     "name": "Surface Science and Engineering",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MAT 402",
                     "name": "Polymer Engineering: Processing and Applications",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MAT 404",
                     "name": "Polymer Physics",
-                    "su_credit": 3,
-                    "ects_credit": 5
+                    "su_credit": 3
                 },
                 {
                     "code": "MAT 405",
                     "name": "Advanced Materials Characterization",
-                    "su_credit": 4,
-                    "ects_credit": 7
+                    "su_credit": 4
                 },
                 {
                     "code": "MAT 406",
                     "name": "Nanoengineered Systems Fabrication",
-                    "su_credit": 3,
-                    "ects_credit": 5
+                    "su_credit": 3
                 },
                 {
                     "code": "MAT 408",
                     "name": "Introduction to Ceramics",
-                    "su_credit": 3,
-                    "ects_credit": 5
+                    "su_credit": 3
                 },
                 {
                     "code": "MAT 416",
                     "name": "Biomaterials Science and Biocompatibility",
-                    "su_credit": 3,
-                    "ects_credit": 5
+                    "su_credit": 3
                 },
                 {
                     "code": "MAT 422",
                     "name": "Glass Science and Engineering",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MAT 423",
                     "name": "Cement Chemistry and Technology",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MAT 424",
                     "name": "Materials Selection in Product Design",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ME 301",
                     "name": "Mechanical Systems I",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ME 302",
                     "name": "Mechanical Systems II",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ME 303",
                     "name": "Control System Design",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ME 304",
                     "name": "Motion Control Systems",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ME 305",
                     "name": "Power Electronics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ME 307",
                     "name": "Fluid Dynamics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ME 308",
                     "name": "Industrial Control",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ME 309",
                     "name": "Heat and Mass Transfer",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ME 312",
                     "name": "Analysis and Synthesis of Mechanisms",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ME 402",
                     "name": "Plasmonics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ME 403",
                     "name": "Introduction to Robotics",
-                    "su_credit": 4,
-                    "ects_credit": 7
+                    "su_credit": 4
                 },
                 {
                     "code": "ME 405",
                     "name": "Mechanical Vibrations",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ME 407",
                     "name": "Embedded Systems",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ME 408",
                     "name": "Mechatronics System Design",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ME 409",
                     "name": "Foundations of Microsystems",
-                    "su_credit": 3,
-                    "ects_credit": 7
+                    "su_credit": 3
                 },
                 {
                     "code": "ME 412",
                     "name": "Introduction to the Finite Element Method",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ME 415",
                     "name": "Computational Analysis and Simulation",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ME 420",
                     "name": "Renewable and Sustainable Energy Systems",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ME 425",
                     "name": "Autonomous Mobile Robotics",
-                    "su_credit": 4,
-                    "ects_credit": 7
+                    "su_credit": 4
                 },
                 {
                     "code": "ME 435",
                     "name": "Scaling in Engineering Systems",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ME 437",
                     "name": "Biomechatronics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ME 441",
                     "name": "Advanced Vehicle Systems",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MGMT 201",
                     "name": "Introduction to Management",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MGMT 203",
                     "name": "Introduction to Data Analysis and Research in Business",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MGMT 213",
                     "name": "Disaster Awareness & Relief Management",
-                    "su_credit": 2,
-                    "ects_credit": 4
+                    "su_credit": 2
                 },
                 {
                     "code": "MGMT 301",
                     "name": "Introduction to Sustainability",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MGMT 302",
                     "name": "Sustainability Assessment Methods and Tools",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MGMT 307",
                     "name": "MIT Sloan Seminars in Management I",
-                    "su_credit": 1,
-                    "ects_credit": 1
+                    "su_credit": 1
                 },
                 {
                     "code": "MGMT 308",
                     "name": "MIT Sloan Seminars in Management II",
-                    "su_credit": 1,
-                    "ects_credit": 1
+                    "su_credit": 1
                 },
                 {
                     "code": "MGMT 309",
                     "name": "NGO Management and Impact: Organizational Design, Positioning, and Sustainable Futures",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MGMT 333",
                     "name": "Business Ethics and Social Sustainability",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MGMT 401",
                     "name": "Business Strategy",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MGMT 402",
                     "name": "Entrepreneurship",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MGMT 403",
                     "name": "International Business",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MGMT 405",
                     "name": "Turkish Managerial Context",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MGMT 406",
                     "name": "Globalization",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MGMT 407",
                     "name": "Business Law",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MGMT 408",
                     "name": "Ethics in Business and Sustainability",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MGMT 409",
                     "name": "Managing Non-Profit Organizations",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MGMT 410",
                     "name": "Corporate Governance and Social Responsibility",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MGMT 411",
                     "name": "Agile Project Management",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MGMT 412",
                     "name": "Social Innovation and Entrepreneurship",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MGMT 413",
                     "name": "Strategic Innovation",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MGMT 414",
                     "name": "Negotiation Skills",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MGMT 415",
                     "name": "Entrepreneurial Technology Commercialization",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MGMT 417",
                     "name": "Strategy Execution",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MGMT 418",
                     "name": "Fundamentals of Family Business",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MGMT 419",
                     "name": "Succession & Transfer of Power in Family Business",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MGMT 420",
                     "name": "New venture and Business Plan Development",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MGMT 422",
                     "name": "Socio-Cultural and Institutional Perspectives on the Family Business",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MGMT 424",
                     "name": "Leadership of Sustainability",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MGMT 425",
                     "name": "Art Business and Entrepreneurship",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MGMT 450",
                     "name": "Selected Topics in Management I",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MGMT 451",
                     "name": "Selected Topics in Management II",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MGMT 491",
                     "name": "Career and Professional Development Course",
-                    "su_credit": 1,
-                    "ects_credit": 2
+                    "su_credit": 1
                 },
                 {
                     "code": "MGMT 492",
                     "name": "Learning Through Action Project",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MGMT 495",
                     "name": "Entrepreneurial Skills Workshop I",
-                    "su_credit": 1,
-                    "ects_credit": 2
+                    "su_credit": 1
                 },
                 {
                     "code": "MGMT 496",
                     "name": "Entrepreneurial Skills Workshop II",
-                    "su_credit": 1,
-                    "ects_credit": 2
+                    "su_credit": 1
                 },
                 {
                     "code": "MGMT 499",
                     "name": "Independent Study",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MKTG 301",
                     "name": "Introduction to Marketing",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MKTG 402",
                     "name": "Consumer Behavior",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MKTG 403",
                     "name": "International Marketing",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MKTG 406",
                     "name": "Brand Management",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MKTG 407",
                     "name": "Sales Management",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MKTG 408",
                     "name": "Public Relations and Influencer Marketing",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MKTG 411",
                     "name": "Advertising and Promotion",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MKTG 412",
                     "name": "Marketing Channel Management and Retailing",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MKTG 450",
                     "name": "Selected Topics in Marketing I",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "MKTG 451",
                     "name": "Selected Topics in Marketing II",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "NS 200",
                     "name": "Einstein's Relativity",
-                    "su_credit": 3,
-                    "ects_credit": 5
+                    "su_credit": 3
                 },
                 {
                     "code": "NS 201",
                     "name": "Discovering Life",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "NS 206",
                     "name": "What is There in the Universe: Inside the Milky Way?",
-                    "su_credit": 3,
-                    "ects_credit": 5
+                    "su_credit": 3
                 },
                 {
                     "code": "NS 207",
                     "name": "Organic Chemistry",
-                    "su_credit": 4,
-                    "ects_credit": 7
+                    "su_credit": 4
                 },
                 {
                     "code": "NS 208",
                     "name": "General Biotechnology",
-                    "su_credit": 3,
-                    "ects_credit": 5
+                    "su_credit": 3
                 },
                 {
                     "code": "NS 209",
                     "name": "What is there in the Universe: \"Beyond the Milky Way\"",
-                    "su_credit": 3,
-                    "ects_credit": 5
+                    "su_credit": 3
                 },
                 {
                     "code": "NS 213",
                     "name": "Basic Concepts of Physics for Scientists and Engineers",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "NS 214",
                     "name": "Oscillations, Waves and Optics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "NS 216",
                     "name": "Life on Earth",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "NS 218",
                     "name": "Fundamentals of Nanoscience",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "NS 222",
                     "name": "Planetary Systems and Extrasolar Planets",
-                    "su_credit": 3,
-                    "ects_credit": 5
+                    "su_credit": 3
                 },
                 {
                     "code": "NS 223",
                     "name": "Environmental Science",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "NS 224",
                     "name": "Urban Agriculture",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "OPIM 301",
                     "name": "Operations Management",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "OPIM 401",
                     "name": "Supply Chain Management",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "OPIM 403",
                     "name": "Service Operations Management",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "OPIM 411",
                     "name": "Fashion Industry Operations and Pricing",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "OPIM 412",
                     "name": "Strategic Procurement",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "OPIM 413",
                     "name": "AI in Business",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "OPIM 416",
                     "name": "Quality Improvement with Six Sigma",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "OPIM 450",
                     "name": "Selected Topics in Operations Management I",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "OPIM 451",
                     "name": "Selected Topics in Operations Management II",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "OPIM 452",
                     "name": "Selected Topics in Management Information Systems I",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "OPIM 453",
                     "name": "Selected Topics in Management Information Systems II",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ORG 301",
                     "name": "Organizations and Organizing",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ORG 302",
                     "name": "Organizational Behavior",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ORG 401",
                     "name": "Human Resources Management",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ORG 402",
                     "name": "Organizational Design",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ORG 403",
                     "name": "Cross-Cultural Management",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ORG 404",
                     "name": "Creativity & Leading  Innovations",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ORG 450",
                     "name": "Selected Topics in Organizations I",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "ORG 451",
                     "name": "Selected Topics in Organizations II",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PHIL 202",
                     "name": "Problems of Philosophy",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PHIL 300",
                     "name": "Philosophy of Science",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PHIL 301",
                     "name": "Philosophy of Social Sciences",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PHIL 310",
                     "name": "Philosophy of Mind",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PHIL 313",
                     "name": "Emotion and Reason",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PHIL 321",
                     "name": "Symbolic Logic",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PHIL 322",
                     "name": "Philosophy of Art",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PHIL 323",
                     "name": "Imagination and Play",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PHIL 342",
                     "name": "Philosophy of Biology",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PHIL 370",
                     "name": "Philosophy of Artificial Intelligence",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PHIL 399",
                     "name": "Independent Study",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PHIL 401",
                     "name": "Epistemology",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PHIL 421",
                     "name": "Personhood and Personal Identity",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PHIL 450",
                     "name": "Science and Society",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PHIL 460",
                     "name": "Environmental Ethics and Sustainability",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PHYS 113",
                     "name": "Basic Concepts of Physics for Scientists and Engineers",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PHYS 211",
                     "name": "Modern Physics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PHYS 302",
                     "name": "Solid State Physics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PHYS 303",
                     "name": "Quantum Mechanics I",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PHYS 304",
                     "name": "Quantum Mechanics II",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PHYS 401",
                     "name": "Classical Mechanics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PHYS 411",
                     "name": "Electromagnetic Theory I",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PHYS 412",
                     "name": "Statistical Mechanics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PHYS 438",
                     "name": "Phase Transitions and Renormalization-Group Theory",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PHYS 484",
                     "name": "Quantum Computation and Quantum Information",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PHYS 492",
                     "name": "Modern Topics in Condensed Matter Physics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 250",
                     "name": "Comparative Politics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 251",
                     "name": "Borders, Citizens, Immigrants, Refugees",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 301",
                     "name": "Political Theory I",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 302",
                     "name": "Issues and Concepts in Political Philosophy",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 303",
                     "name": "Elections And Political Participation",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 305",
                     "name": "Political Ideologies in Modern Türkiye",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 307",
                     "name": "Politics of Development",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 348",
                     "name": "Politics of Southern Europe",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 349",
                     "name": "Politics of South-East Asia",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 350",
                     "name": "Transitions to Democracy in Eastern Europe",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 351",
                     "name": "Dynamics of Political Change",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 352",
                     "name": "Turkish Politics I",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 353",
                     "name": "Turkish Politics II",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 354",
                     "name": "Politics of Migration",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 364",
                     "name": "Constitutional Law",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 365",
                     "name": "Law and Politics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 366",
                     "name": "Special Topics in Political Science and International Relations",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 392",
                     "name": "Modern Dictatorships and the One-Party Period Political System in Türkiye",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 393",
                     "name": "Political Parties in Türkiye",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 399",
                     "name": "Independent Study",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 400",
                     "name": "Ancient, Medieval and Early Political Theory",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 403",
                     "name": "Political Psychology",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 405",
                     "name": "Political Thought: Issues, Concepts, Debates",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 408",
                     "name": "Religion and Politics in the Muslim World",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 410",
                     "name": "American Politics and Government",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 421",
                     "name": "Modernity: Concept, Perspectives, and Issues",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 422",
                     "name": "Politics and Culture",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 425",
                     "name": "Civil Society",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 434",
                     "name": "Formal Modelling and Political Analysis I",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 446",
                     "name": "Latin American Politics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 448",
                     "name": "Conflicts in the Middle East",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 455",
                     "name": "Rise and Fall of Democracy",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 457",
                     "name": "The Politics of Authoritarian Regimes",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 462",
                     "name": "Analytical Approaches To The European Union",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 473",
                     "name": "Political Theory II",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 483",
                     "name": "Ethnicity and Nationalism",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 491",
                     "name": "European Politics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 492",
                     "name": "European Union: Politics, Policies and Governance",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 493",
                     "name": "Comparative Local Government",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 495",
                     "name": "Middle Eastern Politics and Government",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "POLS 496",
                     "name": "Reform and the History of Ideas in the Ottoman Empire in the 19th century",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PROJ 102",
                     "name": "Project Course",
-                    "su_credit": 3,
-                    "ects_credit": 2
+                    "su_credit": 3
                 },
                 {
                     "code": "PROJ 301",
                     "name": "Guided Project I",
-                    "su_credit": 1,
-                    "ects_credit": 2
+                    "su_credit": 1
                 },
                 {
                     "code": "PROJ 401",
                     "name": "Guided Project II",
-                    "su_credit": 2,
-                    "ects_credit": 4
+                    "su_credit": 2
                 },
                 {
                     "code": "PSY 201",
                     "name": "Mind and Behavior",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 203",
                     "name": "Stress and Well-Being",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 310",
                     "name": "Cognitive Processes",
-                    "su_credit": 3,
-                    "ects_credit": 7
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 311",
                     "name": "Emotion",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 312",
                     "name": "Sensation / Perception",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 314",
                     "name": "Language",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 315",
                     "name": "Memory",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 316",
                     "name": "Attention",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 317",
                     "name": "Learning",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 320",
                     "name": "Developmental Psychology",
-                    "su_credit": 3,
-                    "ects_credit": 7
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 322",
                     "name": "Lifespan Psychological Science",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 323",
                     "name": "Human Bonding",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 325",
                     "name": "Infant Development",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 341",
                     "name": "Applied Social Psychology",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 343",
                     "name": "Relationship Science",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 344",
                     "name": "Group Processes",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 345",
                     "name": "Stress and Well-Being in Adulthood",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 350",
                     "name": "Introduction to Neuroscience",
-                    "su_credit": 3,
-                    "ects_credit": 7
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 360",
                     "name": "Abnormal Behavior",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 361",
                     "name": "Personality",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 362",
                     "name": "Clinical Applications of Psychology",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 363",
                     "name": "Individual Differences",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 364",
                     "name": "Clinical Interviewing",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 365",
                     "name": "Family and Couple Therapy",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 366",
                     "name": "Child and Adolescent Psychopathology",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 368",
                     "name": "Adolescent Development and Mental Health",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 398",
                     "name": "Independent Study I",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 399",
                     "name": "Independent Study II",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 403",
                     "name": "Advanced Research in Psychology",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 410",
                     "name": "Advanced Topics in Social and Cognitive Psychology",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 411",
                     "name": "Cognition, Emotion and Psychopathology",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 414",
                     "name": "Selected topics in Language and Communication",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 415",
                     "name": "Seminar in Memory and Attention",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 416",
                     "name": "Culture and Cognition",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 418",
                     "name": "Topics in Episodic Memory and Future Thinking",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 421",
                     "name": "Cognitive Development",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 422",
                     "name": "Social Development",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 424",
                     "name": "Language Development in Infancy and Childhood",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 442",
                     "name": "Social Cognition",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 443",
                     "name": "Psychology of the Self",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 444",
                     "name": "Intergroup Relationships",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 445",
                     "name": "Selected Topics in Social Psychology",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 450",
                     "name": "Selected Topics in Neuroscience",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 467",
                     "name": "Clinical Insights from Basic Psychological Science",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 469",
                     "name": "Foundations of Infant Mental Heath",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 480",
                     "name": "Psychology in the Public Interest",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "PSY 481",
                     "name": "Selected Topics in Applied Psychology",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "SOC 201",
                     "name": "Social Theory",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "SOC 308",
                     "name": "Sociology of Religion",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "SOC 313",
                     "name": "Turkish Social Thought",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "SOC 318",
                     "name": "Qualitative Research Methods",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "SOC 402",
                     "name": "Media and Politics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "SOC 408",
                     "name": "Religion and Politics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "SOC 420",
                     "name": "Infrastructure and Mobilities",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "SOC 425",
                     "name": "Power, Economy, and Society",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "SOC 426",
                     "name": "Gender and Work",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "SOC 432",
                     "name": "Sexualities, Sociabilities",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "SPS 201",
                     "name": "Fundamentals of Scientific Inquiry and Statistical Reasoning for Social Sciences",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "SPS 315",
                     "name": "Analysis of Social Networks",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "SPS 320",
                     "name": "Approaches to Ethnic Conflict",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "SPS 374",
                     "name": "Global Environmental Challenges",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "SPS 384",
                     "name": "Climate Change and Environmental Politics",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "SPS 394",
                     "name": "Political Ecology and Society",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "SPS 404",
                     "name": "Six Key Global Challenges: A Historical Perspective",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 201",
                     "name": "Visual Language I",
-                    "su_credit": 4,
-                    "ects_credit": 7
+                    "su_credit": 4
                 },
                 {
                     "code": "VA 202",
                     "name": "Visual Language II",
-                    "su_credit": 4,
-                    "ects_credit": 7
+                    "su_credit": 4
                 },
                 {
                     "code": "VA 203",
                     "name": "Language of Drawing I",
-                    "su_credit": 4,
-                    "ects_credit": 7
+                    "su_credit": 4
                 },
                 {
                     "code": "VA 204",
                     "name": "Language of Drawing II",
-                    "su_credit": 3,
-                    "ects_credit": 7
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 228",
                     "name": "Introduction to Photography",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 234",
                     "name": "Design with Typography",
-                    "su_credit": 3,
-                    "ects_credit": 7
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 301",
                     "name": "Art Studio I",
-                    "su_credit": 3,
-                    "ects_credit": 7
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 302",
                     "name": "Art Studio II",
-                    "su_credit": 3,
-                    "ects_credit": 7
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 303",
                     "name": "Design Studio I",
-                    "su_credit": 3,
-                    "ects_credit": 7
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 304",
                     "name": "Design Studio II",
-                    "su_credit": 3,
-                    "ects_credit": 7
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 310",
                     "name": "Introduction to Multimedia",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 311",
                     "name": "Art and Design Practices in the City",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 312",
                     "name": "History of Visual Communication",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 315",
                     "name": "Visual Culture",
-                    "su_credit": 3,
-                    "ects_credit": 7
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 321",
                     "name": "Fine Art Practice",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 322",
                     "name": "Digital Art Practice",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 323",
                     "name": "Figure Drawing",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 324",
                     "name": "Advanced Drawing",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 325",
                     "name": "Interface Design",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 328",
                     "name": "Digital and Photographic Imaging",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 329",
                     "name": "Photography and Expression",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 331",
                     "name": "Illustration as Communication",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 333",
                     "name": "Content Creation and Design for Websites",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 335",
                     "name": "Sound and Image",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 399",
                     "name": "Independent Study",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 401",
                     "name": "Art Studio III",
-                    "su_credit": 4,
-                    "ects_credit": 7
+                    "su_credit": 4
                 },
                 {
                     "code": "VA 402",
                     "name": "Art Studio IV",
-                    "su_credit": 4,
-                    "ects_credit": 7
+                    "su_credit": 4
                 },
                 {
                     "code": "VA 403",
                     "name": "Design Studio III",
-                    "su_credit": 4,
-                    "ects_credit": 7
+                    "su_credit": 4
                 },
                 {
                     "code": "VA 404",
                     "name": "Design Studio IV",
-                    "su_credit": 4,
-                    "ects_credit": 7
+                    "su_credit": 4
                 },
                 {
                     "code": "VA 416",
                     "name": "History of Digital and Electronic Arts",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 420",
                     "name": "Concepts & Debates in Contemporary Art",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 423",
                     "name": "Art, Culture, Technology",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 424",
                     "name": "Advanced Topics in Typography",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 430",
                     "name": "Art Analysis: Theory and Criticism",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 431",
                     "name": "Videography and Narrative Making",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 433",
                     "name": "3D Modelling",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 434",
                     "name": "3D Animation",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 437",
                     "name": "Experimental Film and Video",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 440",
                     "name": "Motion Graphics and Art",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 441",
                     "name": "Visiting Artist Studio",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 444",
                     "name": "Interaction Design",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 445",
                     "name": "Issues in Contemporary Performance Art",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 446",
                     "name": "History and Aesthetics of Electroacoustic Music",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 450",
                     "name": "Construction/Deconstruction in 3 Dimensional Space",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 453",
                     "name": "Design Thinking",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 455",
                     "name": "Physical Computing",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 465",
                     "name": "Artificial Intelligence & Creativity",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VA 481",
                     "name": "Summer Project I",
-                    "su_credit": 2,
-                    "ects_credit": 3
+                    "su_credit": 2
                 },
                 {
                     "code": "VA 482",
                     "name": "Summer Project II",
-                    "su_credit": 2,
-                    "ects_credit": 3
+                    "su_credit": 2
                 },
                 {
                     "code": "VA 490",
                     "name": "Professional Practice as a Designer",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VIS 308",
                     "name": "The Business of Art",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VIS 310",
                     "name": "The New Media",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "VIS 412",
                     "name": "Museums and Contemporary Arts",
-                    "su_credit": 3,
-                    "ects_credit": 6
+                    "su_credit": 3
                 },
                 {
                     "code": "XM 490",
                     "name": "Project Course for External Students",
-                    "su_credit": 0,
-                    "ects_credit": 6
+                    "su_credit": 0
                 }
-            ],
-            "note": "Courses not in University Courses or Language Courses."
+            ]
         }
     }
 }
