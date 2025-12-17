@@ -2,44 +2,52 @@
 =============================================================================
 MODÜL: AI / ML Engine
 DOSYA: src/ml_engine.py
-TANIM: Sentence-BERT modelini kullanarak metinler arası anlamsal benzerlik hesaplar.
-
-MEVCUT FONKSİYONLAR:
-1. calculate_ml_scores(df, user_query) ... Ders açıklamaları ile aranan kelime arasındaki
-                                           benzerlik skorunu (0-100) döndürür.
+TANIM: Ders açıklamaları ile ilgi alanı arasındaki benzerliği hesaplar.
 =============================================================================
 """
 
-from sentence_transformers import SentenceTransformer, util
+try:
+    from sentence_transformers import SentenceTransformer, util
+    MODEL_AVAILABLE = True
+except ImportError:
+    MODEL_AVAILABLE = False
+
 import pandas as pd
 
-# Modeli global olarak bir kere yükle (Performans için)
-# Bu model küçük ve hızlıdır.
-model = SentenceTransformer('all-MiniLM-L6-v2')
+# Modeli global yükle (Performans için tek sefer)
+model = None
+if MODEL_AVAILABLE:
+    try:
+        model = SentenceTransformer('all-MiniLM-L6-v2')
+    except:
+        MODEL_AVAILABLE = False
 
 def calculate_ml_scores(df, user_query):
     """
-    DataFrame içindeki 'Description' (yoksa 'Course Name') sütunu ile
-    kullanıcı sorgusunu karşılaştırır.
-    
-    Returns:
-        list: 0 ile 100 arasında float puan listesi.
+    DataFrame içindeki 'Description' (yoksa 'Course Name') ile sorguyu karşılaştırır.
     """
     if df.empty or not user_query:
         return [0] * len(df)
     
-    # Hedef metinleri hazırla (Açıklama yoksa ismi kullan)
+    if not MODEL_AVAILABLE or model is None:
+        # Fallback: Kütüphane yoksa basit kelime sayımı yap
+        scores = []
+        q_tokens = set(user_query.lower().split())
+        for _, row in df.iterrows():
+            text = (str(row.get('Description', '')) + " " + str(row.get('Course Name', ''))).lower()
+            match_count = sum(1 for t in q_tokens if t in text)
+            scores.append(min(match_count * 20, 100))
+        return scores
+    
+    # Hedef metinleri hazırla
     corpus = df.apply(
-        lambda x: str(x['Description']) if pd.notna(x['Description']) and len(str(x['Description'])) > 5 
+        lambda x: str(x['Description']) if pd.notna(x.get('Description')) and len(str(x.get('Description'))) > 5 
         else str(x['Course Name']), axis=1
     ).tolist()
     
-    # Embedding (Vektöre çevirme)
+    # Embedding & Benzerlik
     query_embedding = model.encode(user_query, convert_to_tensor=True)
     corpus_embeddings = model.encode(corpus, convert_to_tensor=True)
-    
-    # Cosine Similarity (Benzerlik) Hesapla
     cosine_scores = util.cos_sim(query_embedding, corpus_embeddings)[0]
     
-    # Skoru 100 üzerinden döndür
     return [round(score.item() * 100, 1) for score in cosine_scores]

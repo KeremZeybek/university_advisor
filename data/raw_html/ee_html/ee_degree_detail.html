@@ -1,0 +1,821 @@
+<html>
+<head>
+<meta charset="utf-8"/>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-87158618-4"></script>
+        <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag("js", new Date());
+        
+         gtag("config", "UA-87158618-4");
+        </script>
+    
+    
+    
+
+        <style type="text/css">
+        <!--
+          BODY {    MARGIN: 0px; COLOR: #4b5065; FONT-FAMILY: Arial, Helvetica, Tahoma; BACKGROUND-COLOR: #ffffff}
+          A    {    FONT-SIZE: 10px; COLOR: #4b5065; LINE-HEIGHT: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif}
+          H1   {    PADDING-RIGHT: 5px; MARGIN-TOP: 6px; PADDING-LEFT: 5px; FONT-SIZE: 10px; MARGIN-BOTTOM: 6px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: top; COLOR: #bb6458; LINE-HEIGHT: normal; PADDING-TOP: 0px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif}
+          H2   {    PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-SIZE: 10px; PADDING-BOTTOM: 5px; VERTICAL-ALIGN: top; COLOR: #bb6458; LINE-HEIGHT: normal; PADDING-TOP: 5px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif}
+          H3   {    PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-SIZE: 10px; PADDING-BOTTOM: 5px; VERTICAL-ALIGN: top; COLOR: #4b5065; LINE-HEIGHT: normal; PADDING-TOP: 5px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif}
+          H4   {    PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-SIZE: 10px; PADDING-BOTTOM: 5px; VERTICAL-ALIGN: top; COLOR: #4b5065; LINE-HEIGHT: normal; PADDING-TOP: 5px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif}
+          H5   {    PADDING-RIGHT: 5px; MARGIN-TOP: 6px; PADDING-LEFT: 5px; FONT-SIZE: 10px; MARGIN-BOTTOM: 6px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: top; COLOR: #bb6458; LINE-HEIGHT: normal; PADDING-TOP: 0px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif}
+          P    {    PADDING-RIGHT: 5px; MARGIN-TOP: 6px; PADDING-LEFT: 5px; FONT-SIZE: 10px; MARGIN-BOTTOM: 6px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: top; COLOR: #4d4d4d; LINE-HEIGHT: normal; PADDING-TOP: 0px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif}
+          BLOCKQUOTE {    PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 10px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: top; COLOR: #4d4d4d; LINE-HEIGHT: normal; MARGIN-RIGHT: 0px; PADDING-TOP: 0px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-ALIGN: left}
+          PRE  {    PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-SIZE: 10px; PADDING-BOTTOM: 5px; VERTICAL-ALIGN: top; COLOR: #4d4d4d; LINE-HEIGHT: normal; PADDING-TOP: 5px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-ALIGN: left}
+          UL   {    PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-SIZE: 10px; PADDING-BOTTOM: 5px; MARGIN-LEFT: 10px; VERTICAL-ALIGN: top; COLOR: #4d4d4d; LINE-HEIGHT: normal; PADDING-TOP: 5px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-ALIGN: left}
+          OL   {    PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-SIZE: 10px; PADDING-BOTTOM: 5px; MARGIN-LEFT: 15px; VERTICAL-ALIGN: top; COLOR: #4d4d4d; LINE-HEIGHT: normal; PADDING-TOP: 5px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-ALIGN: left}
+          LI   {    PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-SIZE: 10px; PADDING-BOTTOM: 5px; MARGIN-LEFT: 20px; COLOR: #4d4d4d; LINE-HEIGHT: normal; PADDING-TOP: 5px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-ALIGN: left}
+          DL   {    PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-SIZE: 10px; PADDING-BOTTOM: 5px; VERTICAL-ALIGN: top; COLOR: #4b5065; LINE-HEIGHT: normal; PADDING-TOP: 5px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-ALIGN: left}
+          DT   {    PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-SIZE: 10px; PADDING-BOTTOM: 5px; VERTICAL-ALIGN: top; COLOR: #4b5065; LINE-HEIGHT: normal; PADDING-TOP: 5px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-ALIGN: left}
+          DD   {    PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-SIZE: 10px; PADDING-BOTTOM: 5px; VERTICAL-ALIGN: top; COLOR: #4b5065; LINE-HEIGHT: normal; PADDING-TOP: 5px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-ALIGN: left}
+          TH   {    FONT-SIZE: 10px; LINE-HEIGHT: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif}
+          TD   {    FONT-SIZE: 10px; LINE-HEIGHT: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif}
+          TABLE    {    }
+          P.none   {    PADDING-RIGHT: 4px; PADDING-LEFT: 4px; FONT-SIZE: 10px; PADDING-BOTTOM: 4px; MARGIN: 0px; COLOR: #4b5065; PADDING-TOP: 4px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif}
+          .nobold  {    FONT-WEIGHT: normal}
+          P.haber  {    MARGIN-TOP: 3pt; FONT-WEIGHT: bold; FONT-SIZE: 10px; MARGIN-BOTTOM: 3pt; COLOR: #4b5065; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif}
+          A.haber  {    MARGIN-TOP: 3pt; FONT-WEIGHT: bold; FONT-SIZE: 10px; MARGIN-BOTTOM: 3pt; COLOR: #4b5065; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none}
+          A.haber1 {    MARGIN-TOP: 0pt; FONT-WEIGHT: bold; FONT-SIZE: 10px; MARGIN-BOTTOM: 0pt; COLOR: #4b5065; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none}
+          P.haber1 {    MARGIN-TOP: 9px; MARGIN-BOTTOM: 9px}
+          A.SolMenu {    PADDING-RIGHT: 0px; MARGIN-TOP: 0px; PADDING-LEFT: 0px; FONT-SIZE: 9px; MARGIN-BOTTOM: 0px; PADDING-BOTTOM: 0px; COLOR: white; PADDING-TOP: 0px; FONT-FAMILY: Arial; TEXT-DECORATION: none}
+          A.SagMenu {    PADDING-RIGHT: 0px; MARGIN-TOP: 0px; PADDING-LEFT: 0px; FONT-SIZE: 9px; MARGIN-BOTTOM: 0px; PADDING-BOTTOM: 0px; COLOR: black; PADDING-TOP: 0px; FONT-FAMILY: Arial; TEXT-DECORATION: none}
+          SPAN.SagMenu  {    PADDING-RIGHT: 0px; MARGIN-TOP: 0px; PADDING-LEFT: 0px; FONT-SIZE: 9px; MARGIN-BOTTOM: 0px; PADDING-BOTTOM: 0px; COLOR: black; PADDING-TOP: 0px; FONT-FAMILY: Arial; TEXT-DECORATION: none}
+          P.SagMenu     {    PADDING-RIGHT: 5px; MARGIN-TOP: 0px; PADDING-LEFT: 5px; FONT-SIZE: 9px; MARGIN-BOTTOM: 0px; PADDING-BOTTOM: 5px; COLOR: black; PADDING-TOP: 5px; FONT-FAMILY: Arial}
+          P.sayfabaslik {    PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-WEIGHT: bold; FONT-SIZE: 10px; MARGIN-BOTTOM: 0px; PADDING-BOTTOM: 5px; VERTICAL-ALIGN: top; COLOR: #bb6458; LINE-HEIGHT: normal; PADDING-TOP: 5px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif}
+          .darli        {    PADDING-RIGHT: 0px; MARGIN-TOP: 0px; PADDING-LEFT: 0px; MARGIN-BOTTOM: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px }        
+        -->
+        </style> 
+     
+</head>
+<body>
+<!-- tablo 2 ac -->
+<table >
+<tr>
+<td><h3>Giriş Dönemi: Güz 2023-2024</h3></td>
+</tr>
+<tr>
+<td><h1>ELEKTRONİK MÜHENDİSLİĞİ LİSANS PROGRAMI (BSEE)</h1></td>
+</tr>
+<tr>
+<td><b>&nbsp;&nbsp;Diploma Alanı Danışmanları: </b>
+Ayhan Bozkurt, Murat Kaya Yapıcı 
+</td>
+</tr>
+<tr>
+<td>
+<p>Elektronik Mühendisliği programı öğrencileri
+çok hızlı gelişen bu alandaki son teknolojilere
+hazırlayacak derin temel ve teknik donanımları
+içerecek şekilde tasarlanmıştır. Program Elektronik
+Mühendisliğinin, elektronik cihaz ve devreler,
+optik, haberleşme sistemleri, bilgi ve işaret işleme
+gibi farklı dallarında dengeli bir şekilde dağılmış
+olan dersler içerir. Öğrencilerimiz kendi ilgi ve
+yetkinliklerine göre bu alanlardan derslerini
+seçebilmektedirler. Program dersleri projelere 
+dayalı yenilikçi bir yaklaşımla yapılandırıldığından
+öğrencileri gerçekçi mühendislik ve tasarım
+problemleri ile eğitmeyi amaçlar. Elektronik 
+Mühendisliği  mezunlarımız burada edindikleri 
+
+sağlam alt yapı ve yetkinlikleri sayesinde 
+elektronik, bilgisayar, haberleşme gibi 
+sektörlerde teknik lider konumuna hızla 
+gelmektedirler.
+</p>
+<BR><p>*** Dil dersleri herhangi bir ders havuzunda
+yer almamaktadır.
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<!-- tablo 3 ac -->
+<table  class="t_mezuniyet">
+<tr>
+<td colspan="3"><a name=main></a><h1>MEZUNİYET KOŞULLARI ÖZETİ</h1></td>
+</tr>
+<thead>
+<tr>
+<th>Ders Kategorisi</th>
+<th>En Az AKTS Kredisi</th>
+<th>En Az SU Kredisi</th>
+<th>En Az Ders</th>
+</tr>
+</thead>
+<tr>
+<td><a href="#UC_FENS" style = "text-decoration:none">Üniversite Dersleri</a></td>
+<td style="text-align:center">- </td>
+<td style="text-align:center">41 </td>
+<td style="text-align:center">- </td>
+</tr>
+<tr>
+<td><a href="#BSEE_REQ" style = "text-decoration:none">Zorunlu Dersler</a></td>
+<td style="text-align:center">- </td>
+<td style="text-align:center">35 </td>
+<td style="text-align:center">13 </td>
+</tr>
+<tr>
+<td><a href="#BSEE_CEL" style = "text-decoration:none">Çekirdek Seçmeli Dersler</a></td>
+<td style="text-align:center">- </td>
+<td style="text-align:center">25 </td>
+<td style="text-align:center">- </td>
+</tr>
+<tr>
+<td><a href="#BSEE_ARE" style = "text-decoration:none">Alan Seçmeli Dersler</a></td>
+<td style="text-align:center">- </td>
+<td style="text-align:center">9 </td>
+<td style="text-align:center">- </td>
+</tr>
+<tr>
+<td><a href="#BSEE_FRE" style = "text-decoration:none">Serbest Seçmeli Dersler</a></td>
+<td style="text-align:center">- </td>
+<td style="text-align:center">15 </td>
+<td style="text-align:center">- </td>
+</tr>
+<tr>
+<td><a href="#ENG_SCIE" style = "text-decoration:none">Mühendislik</a></td>
+<td style="text-align:center">90 </td>
+<td style="text-align:center">- </td>
+<td style="text-align:center">- </td>
+</tr>
+<tr>
+<td><a href="#FC_FENS" style = "text-decoration:none">Fakülte Dersleri</a></td>
+<td style="text-align:center">- </td>
+<td style="text-align:center">- </td>
+<td style="text-align:center">5 </td>
+</tr>
+<tr>
+<td><a href="#BASIC_SCIE" style = "text-decoration:none">Temel Bilim</a></td>
+<td style="text-align:center">60 </td>
+<td style="text-align:center">- </td>
+<td style="text-align:center">- </td>
+</tr>
+<tr>
+<td><b>Toplam</b></td>
+<td style="text-align:center"><b>240</b></td>
+<td style="text-align:center;"><b>125</b></td>
+<td style="text-align:center;"><b>-</b></td>
+</tr>
+</table>
+<br />
+</td>
+</tr>
+<tr class="t_kategori_row">
+<td>
+<!-- tablo 4 ac -->
+<table  class="t_kategori">
+<tr>
+<div style="height:20;clear:both">&nbsp;</div>
+<td>
+<p><a name="UC_FENS"></a><b>Üniversite Dersleri</b></p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="t_kategori_row_desc">
+<td>
+<!-- tablo 5 ac -->
+<table >
+<tr>
+<td>
+<p>Aşağıda listelenen Üniversite Derslerinden;  toplam 16
+ders ve 41 SU kredisi tamamlanmalıdır.</p>
+<p>- Birinci sınıf Üniversite Dersleri (PROJ 201 dahil,
+1XX kodlu dersler) ve SPS 303 dersi zorunludur.</p>
+<p>- Aşağıda listelenen HUM kodlu derslerden;
+sadece bir tanesi zorunludur.
+<br></br>
+<p>(Üniversite Dersleri ile ilgili genel bilgiler için;
+lütfen Temel Geliştime Direktörlüğü'nün web sitesini
+(fdd.sabanciuniv.edu/tr) ziyaret ediniz.)</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<!-- tablo 6 ac -->
+<table >
+<br />
+<thead>
+<tr>
+<th>&nbsp;</th>
+<th>Ders</th>
+<th>Ders Adı</th>
+<th>AKTS Kredisi</th>
+<th>SU Kredisi</th>
+<th>Fakülte</th>
+</tr>
+</thead>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td nowrap="nowrap"><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=IF&crse_numb=100&lang=tur" >IF 100</a></td>
+<td><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=IF&crse_numb=100&lang=tur" >Problem Çözümünde Bilişimsel Yaklaşımlar</a></td>
+<td style="width:75px;text-align:center;">5</td>
+<td style="width:60px;text-align:center;">3</td>
+<td>MDBF</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td nowrap="nowrap"><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=MATH&crse_numb=101&lang=tur" >MATH 101</a></td>
+<td><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=MATH&crse_numb=101&lang=tur" >Diferansiyel ve İntegral Hesap I</a></td>
+<td style="width:75px;text-align:center;">6</td>
+<td style="width:60px;text-align:center;">3</td>
+<td>MDBF</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td nowrap="nowrap"><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=CIP&crse_numb=101N&lang=tur" >CIP 101N</a></td>
+<td><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=CIP&crse_numb=101N&lang=tur" >Toplumsal Duyarlılık Projeleri I-N</a></td>
+<td style="width:75px;text-align:center;">1</td>
+<td style="width:60px;text-align:center;">0</td>
+<td>SSBF</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td nowrap="nowrap"><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=NS&crse_numb=101&lang=tur" >NS 101</a></td>
+<td><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=NS&crse_numb=101&lang=tur" >Doğa ve Bilim I</a></td>
+<td style="width:75px;text-align:center;">6</td>
+<td style="width:60px;text-align:center;">4</td>
+<td>MDBF</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td nowrap="nowrap"><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=SPS&crse_numb=101&lang=tur" >SPS 101</a></td>
+<td><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=SPS&crse_numb=101&lang=tur" >İnsan ve Toplum I</a></td>
+<td style="width:75px;text-align:center;">6</td>
+<td style="width:60px;text-align:center;">3</td>
+<td>SSBF</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td nowrap="nowrap"><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=TLL&crse_numb=101&lang=tur" >TLL 101</a></td>
+<td><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=TLL&crse_numb=101&lang=tur" >Türk Dili ve Edebiyatı I</a></td>
+<td style="width:75px;text-align:center;">3</td>
+<td style="width:60px;text-align:center;">2</td>
+<td>DO</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td nowrap="nowrap"><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=AL&crse_numb=102&lang=tur" >AL 102</a></td>
+<td><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=AL&crse_numb=102&lang=tur" >Akademik Okuryazarlıklar</a></td>
+<td style="width:75px;text-align:center;">5</td>
+<td style="width:60px;text-align:center;">3</td>
+<td>DO</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td nowrap="nowrap"><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=MATH&crse_numb=102&lang=tur" >MATH 102</a></td>
+<td><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=MATH&crse_numb=102&lang=tur" >Diferansiyel ve İntegral Hesap II</a></td>
+<td style="width:75px;text-align:center;">6</td>
+<td style="width:60px;text-align:center;">3</td>
+<td>MDBF</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td nowrap="nowrap"><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=NS&crse_numb=102&lang=tur" >NS 102</a></td>
+<td><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=NS&crse_numb=102&lang=tur" >Doğa ve Bilim II</a></td>
+<td style="width:75px;text-align:center;">6</td>
+<td style="width:60px;text-align:center;">4</td>
+<td>MDBF</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td nowrap="nowrap"><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=SPS&crse_numb=102&lang=tur" >SPS 102</a></td>
+<td><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=SPS&crse_numb=102&lang=tur" >İnsan ve Toplum II</a></td>
+<td style="width:75px;text-align:center;">6</td>
+<td style="width:60px;text-align:center;">3</td>
+<td>SSBF</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td nowrap="nowrap"><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=TLL&crse_numb=102&lang=tur" >TLL 102</a></td>
+<td><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=TLL&crse_numb=102&lang=tur" >Türk Dili ve Edebiyatı II</a></td>
+<td style="width:75px;text-align:center;">3</td>
+<td style="width:60px;text-align:center;">2</td>
+<td>DO</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td nowrap="nowrap"><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=HIST&crse_numb=191&lang=tur" >HIST 191</a></td>
+<td><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=HIST&crse_numb=191&lang=tur" >Atatürk İlkeleri ve İnkılap Tarihi I</a></td>
+<td style="width:75px;text-align:center;">3</td>
+<td style="width:60px;text-align:center;">2</td>
+<td>SSBF</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td nowrap="nowrap"><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=HIST&crse_numb=192&lang=tur" >HIST 192</a></td>
+<td><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=HIST&crse_numb=192&lang=tur" >Atatürk İlkeleri ve İnkılap Tarihi II</a></td>
+<td style="width:75px;text-align:center;">3</td>
+<td style="width:60px;text-align:center;">2</td>
+<td>SSBF</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td nowrap="nowrap"><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=HUM&crse_numb=201&lang=tur" >HUM 201</a></td>
+<td><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=HUM&crse_numb=201&lang=tur" >Edebiyatın Büyük Eserleri</a></td>
+<td style="width:75px;text-align:center;">5</td>
+<td style="width:60px;text-align:center;">3</td>
+<td>SSBF</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td nowrap="nowrap"><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=PROJ&crse_numb=201&lang=tur" >PROJ 201</a></td>
+<td><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=PROJ&crse_numb=201&lang=tur" >Lisans Proje Dersi</a></td>
+<td style="width:75px;text-align:center;">1</td>
+<td style="width:60px;text-align:center;">1</td>
+<td>MDBF</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td nowrap="nowrap"><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=HUM&crse_numb=202&lang=tur" >HUM 202</a></td>
+<td><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=HUM&crse_numb=202&lang=tur" >Batı Sanatının Büyük Eserleri</a></td>
+<td style="width:75px;text-align:center;">5</td>
+<td style="width:60px;text-align:center;">3</td>
+<td>SSBF</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td nowrap="nowrap"><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=HUM&crse_numb=207&lang=tur" >HUM 207</a></td>
+<td><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=HUM&crse_numb=207&lang=tur" >Batı Felsefesinin Büyük Eserleri</a></td>
+<td style="width:75px;text-align:center;">5</td>
+<td style="width:60px;text-align:center;">3</td>
+<td>SSBF</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td nowrap="nowrap"><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=SPS&crse_numb=303&lang=tur" >SPS 303</a></td>
+<td><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=SPS&crse_numb=303&lang=tur" >Hukuk ve Etik</a></td>
+<td style="width:75px;text-align:center;">5</td>
+<td style="width:60px;text-align:center;">3</td>
+<td>SSBF</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td nowrap="nowrap"><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=HUM&crse_numb=311&lang=tur" >HUM 311</a></td>
+<td><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=HUM&crse_numb=311&lang=tur" >Edebiyatta Büyük Eserler: Modernite Öncesi Dünya</a></td>
+<td style="width:75px;text-align:center;">5</td>
+<td style="width:60px;text-align:center;">3</td>
+<td>SSBF</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td nowrap="nowrap"><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=HUM&crse_numb=312&lang=tur" >HUM 312</a></td>
+<td><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=HUM&crse_numb=312&lang=tur" >Modern Sanatın Büyük Eserleri</a></td>
+<td style="width:75px;text-align:center;">5</td>
+<td style="width:60px;text-align:center;">3</td>
+<td>SSBF</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td nowrap="nowrap"><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=HUM&crse_numb=317&lang=tur" >HUM 317</a></td>
+<td><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=HUM&crse_numb=317&lang=tur" >Ahlak Felsefesinin Büyük Eserleri</a></td>
+<td style="width:75px;text-align:center;">5</td>
+<td style="width:60px;text-align:center;">3</td>
+<td>SSBF</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td nowrap="nowrap"><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=HUM&crse_numb=321&lang=tur" >HUM 321</a></td>
+<td><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=HUM&crse_numb=321&lang=tur" >Edebiyatta Büyük Eserler: Modern Dünya</a></td>
+<td style="width:75px;text-align:center;">5</td>
+<td style="width:60px;text-align:center;">3</td>
+<td>SSBF</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td nowrap="nowrap"><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=HUM&crse_numb=322&lang=tur" >HUM 322</a></td>
+<td><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=HUM&crse_numb=322&lang=tur" >Sanatta Büyük Eserler: Modernite Öncesi Dünya</a></td>
+<td style="width:75px;text-align:center;">5</td>
+<td style="width:60px;text-align:center;">3</td>
+<td>SSBF</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td nowrap="nowrap"><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=HUM&crse_numb=371&lang=tur" >HUM 371</a></td>
+<td><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=HUM&crse_numb=371&lang=tur" >Edebiyatta Büyük Eserler: İslam Dünyası</a></td>
+<td style="width:75px;text-align:center;">5</td>
+<td style="width:60px;text-align:center;">3</td>
+<td>SSBF</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="t_kategori_row">
+<td>
+<!-- tablo 4 ac -->
+<table  class="t_kategori">
+<tr>
+<div style="height:20;clear:both">&nbsp;</div>
+<td>
+<p><a name="BSEE_REQ"></a><b>Zorunlu Dersler</b></p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="t_kategori_row_desc">
+<td>
+<!-- tablo 5 ac -->
+<table >
+<tr>
+<td>
+<BR><p>* Öğrencilerin MATH 212 veya (MATH 201
+ve MATH 202) derslerini alması yeterlidir. Fazladan
+alınan ders; çekirdek, alan ve serbest seçmeli
+havuzlarına sayılmaz.
+<BR><p>* Aşağıda belirtilen MATH 212 veya
+(MATH 201 ve MATH 202) derslerini tamamlama şartına ek
+olarak, öğrenciler zorunlu ders listesinde
+yer alan tüm dersleri başarıyla tamamlamalıdır.
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<!-- tablo 6 ac -->
+<table >
+<br />
+<thead>
+<tr>
+<th>&nbsp;</th>
+<th>Ders</th>
+<th>Ders Adı</th>
+<th>AKTS Kredisi</th>
+<th>SU Kredisi</th>
+<th>Fakülte</th>
+</tr>
+</thead>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td nowrap="nowrap"><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=CS&crse_numb=303&lang=tur" >CS 303</a></td>
+<td><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=CS&crse_numb=303&lang=tur" >Mantık ve Sayısal Sistem Tasarımı</a></td>
+<td style="width:75px;text-align:center;">7</td>
+<td style="width:60px;text-align:center;">4</td>
+<td>MDBF</td>
+</tr>
+<tr>
+<td><center>&nbsp;*&nbsp;</center></td>
+<td nowrap="nowrap"><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=EE&crse_numb=200&lang=tur" >EE 200</a></td>
+<td><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=EE&crse_numb=200&lang=tur" >Elektronik Devre Uygulamaları</a></td>
+<td style="width:75px;text-align:center;">2</td>
+<td style="width:60px;text-align:center;">2</td>
+<td>MDBF</td>
+</tr>
+<tr>
+<td><center>&nbsp;*&nbsp;</center></td>
+<td nowrap="nowrap"><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=EE&crse_numb=202&lang=tur" >EE 202</a></td>
+<td><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=EE&crse_numb=202&lang=tur" >Elektronik Devreler II</a></td>
+<td style="width:75px;text-align:center;">6</td>
+<td style="width:60px;text-align:center;">3</td>
+<td>MDBF</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td nowrap="nowrap"><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=EE&crse_numb=308&lang=tur" >EE 308</a></td>
+<td><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=EE&crse_numb=308&lang=tur" >Mikroişlemci Tabanlı Sistem Tasarımı</a></td>
+<td style="width:75px;text-align:center;">7</td>
+<td style="width:60px;text-align:center;">4</td>
+<td>MDBF</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td nowrap="nowrap"><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=EE&crse_numb=395&lang=tur" >EE 395</a></td>
+<td><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=EE&crse_numb=395&lang=tur" >Staj Projesi</a></td>
+<td style="width:75px;text-align:center;">5</td>
+<td style="width:60px;text-align:center;">0</td>
+<td>MDBF</td>
+</tr>
+<tr>
+<td><center>&nbsp;*&nbsp;</center></td>
+<td nowrap="nowrap"><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=ENS&crse_numb=203&lang=tur" >ENS 203</a></td>
+<td><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=ENS&crse_numb=203&lang=tur" >Elektronik Devreler I</a></td>
+<td style="width:75px;text-align:center;">6</td>
+<td style="width:60px;text-align:center;">3</td>
+<td>MDBF</td>
+</tr>
+<tr>
+<td><center>&nbsp;*&nbsp;</center></td>
+<td nowrap="nowrap"><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=ENS&crse_numb=211&lang=tur" >ENS 211</a></td>
+<td><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=ENS&crse_numb=211&lang=tur" >Sinyaller</a></td>
+<td style="width:75px;text-align:center;">6</td>
+<td style="width:60px;text-align:center;">3</td>
+<td>MDBF</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td nowrap="nowrap"><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=ENS&crse_numb=491&lang=tur" >ENS 491</a></td>
+<td><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=ENS&crse_numb=491&lang=tur" >Mezuniyet Projesi (Tasarım)</a></td>
+<td style="width:75px;text-align:center;">2</td>
+<td style="width:60px;text-align:center;">1</td>
+<td>MDBF</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td nowrap="nowrap"><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=ENS&crse_numb=492&lang=tur" >ENS 492</a></td>
+<td><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=ENS&crse_numb=492&lang=tur" >Mezuniyet Projesi (Uygulama)</a></td>
+<td style="width:75px;text-align:center;">5</td>
+<td style="width:60px;text-align:center;">3</td>
+<td>MDBF</td>
+</tr>
+<tr>
+<td><center>&nbsp;*&nbsp;</center></td>
+<td nowrap="nowrap"><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=MATH&crse_numb=201&lang=tur" >MATH 201</a></td>
+<td><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=MATH&crse_numb=201&lang=tur" >Doğrusal  Cebir</a></td>
+<td style="width:75px;text-align:center;">6</td>
+<td style="width:60px;text-align:center;">3</td>
+<td>MDBF</td>
+</tr>
+<tr>
+<td><center>&nbsp;*&nbsp;</center></td>
+<td nowrap="nowrap"><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=MATH&crse_numb=202&lang=tur" >MATH 202</a></td>
+<td><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=MATH&crse_numb=202&lang=tur" >Diferansiyel Denklemler</a></td>
+<td style="width:75px;text-align:center;">6</td>
+<td style="width:60px;text-align:center;">3</td>
+<td>MDBF</td>
+</tr>
+<tr>
+<td><center>&nbsp;*&nbsp;</center></td>
+<td nowrap="nowrap"><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=MATH&crse_numb=203&lang=tur" >MATH 203</a></td>
+<td><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=MATH&crse_numb=203&lang=tur" >Olasılığa Giriş</a></td>
+<td style="width:75px;text-align:center;">6</td>
+<td style="width:60px;text-align:center;">3</td>
+<td>MDBF</td>
+</tr>
+<tr>
+<td><center>&nbsp;*&nbsp;</center></td>
+<td nowrap="nowrap"><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=MATH&crse_numb=204&lang=tur" >MATH 204</a></td>
+<td><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=MATH&crse_numb=204&lang=tur" >Kesikli Matematik</a></td>
+<td style="width:75px;text-align:center;">6</td>
+<td style="width:60px;text-align:center;">3</td>
+<td>MDBF</td>
+</tr>
+<tr>
+<td><center>&nbsp;*&nbsp;</center></td>
+<td nowrap="nowrap"><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=MATH&crse_numb=212&lang=tur" >MATH 212</a></td>
+<td><a href="sabanci_www.p_get_courses?levl_code=UG&subj_code=MATH&crse_numb=212&lang=tur" >Doğrusal Cebir ve Diferansiyel Denklemler</a></td>
+<td style="width:75px;text-align:center;">7</td>
+<td style="width:60px;text-align:center;">4</td>
+<td>MDBF</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="t_kategori_row">
+<td>
+<!-- tablo 4 ac -->
+<table  class="t_kategori">
+<tr>
+<div style="height:20;clear:both">&nbsp;</div>
+<td>
+<p><a name="BSEE_CEL"></a><b>Çekirdek Seçmeli Dersler</b></p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="t_kategori_row_desc">
+<td>
+<!-- tablo 5 ac -->
+<table >
+<tr>
+<td>
+<p>Çekirdek ders havuzundan
+en az 25 SU kredi;
+bunlardan en az 9 SU kredisi  400 kodlu
+EE derslerinden olmalıdır. -
+Bu havuzdan fazladan alınan dersler, doğrudan "Alan Seçmeli"
+ders yükümlülüklerine sayılır.</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<tr>
+<td>Çekirdek Seçmeli Dersler icin <a href="SU_DEGREE.p_list_courses?P_TERM=202301&P_AREA=BSEE_CEL&P_PROGRAM=BSEE&P_LANG=TUR&P_LEVEL=UG">tıklayınız...</a></td>
+</tr>
+</td>
+</tr>
+<tr class="t_kategori_row">
+<td>
+<!-- tablo 4 ac -->
+<table  class="t_kategori">
+<tr>
+<div style="height:20;clear:both">&nbsp;</div>
+<td>
+<p><a name="BSEE_ARE"></a><b>Alan Seçmeli Dersler</b></p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="t_kategori_row_desc">
+<td>
+<!-- tablo 5 ac -->
+<table >
+<tr>
+<td>
+<P>Alan Seçmeli ders havuzundan en 9 SU kredilik ders
+alınmalıdır.
+Bunlardan en az bir tanesi CS 300, CS 401,
+CS 412, ME 303, PHYS 302, PHYS 303 ve
+EE 48XXX "Özel Konulu Dersler" derslerinden alınmalıdır. -
+Bu havuzdan fazladan alınan dersler, doğrudan
+ "Serbest Seçmeli" ders yükümlülüklerine sayılır. </P>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<tr>
+<td>Alan Seçmeli Dersler icin <a href="SU_DEGREE.p_list_courses?P_TERM=202301&P_AREA=BSEE_ARE&P_PROGRAM=BSEE&P_LANG=TUR&P_LEVEL=UG">tıklayınız...</a></td>
+</tr>
+</td>
+</tr>
+<tr class="t_kategori_row">
+<td>
+<!-- tablo 4 ac -->
+<table  class="t_kategori">
+<tr>
+<div style="height:20;clear:both">&nbsp;</div>
+<td>
+<p><a name="BSEE_FRE"></a><b>Serbest Seçmeli Dersler</b></p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="t_kategori_row_desc">
+<td>
+<!-- tablo 5 ac -->
+<table >
+<tr>
+<td>
+<P>Toplam 15 SU kredilik dersin SSBF, YBF ve MDBF
+tarafından sunulan derslerden alınması zorunludur
+("Üniversite Dersleri" dışında). DO (Diller Okulu)
+tarafından sunulan dil dersleri serbest seçmeli dersler
+grubunda yer almamaktadır.</P>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<tr>
+<td>Serbest Seçmeli Dersler icin <a href="SU_DEGREE.p_list_courses?P_TERM=202301&P_AREA=BSEE_FRE&P_PROGRAM=BSEE&P_LANG=TUR&P_LEVEL=UG">tıklayınız...</a></td>
+</tr>
+</td>
+</tr>
+<tr class="t_kategori_row">
+<td>
+<!-- tablo 4 ac -->
+<table  class="t_kategori">
+<tr>
+<div style="height:20;clear:both">&nbsp;</div>
+<td>
+<p><a name="FC_FENS"></a><b>Fakülte Dersleri</b></p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="t_kategori_row_desc">
+<td>
+<!-- tablo 5 ac -->
+<table >
+<tr>
+<td>
+<p>Fakülteler tarafından belirlenen kurallar çerçevesinde
+MDBF Fakülte Dersleri ile SSBF, YBF Fakülte Dersleri
+havuzundan toplam en az 5 ders alınmalıdır.
+Bu 5 dersten en az ikisinin MATH kodlu olması ve en az
+üçünün de MDBF Fakülte Dersleri havuzundan seçilmiş
+olması gerekir.
+Bu dersler, diğer program yükümlülüklerinin
+tamamlanması sırasında da alınmış olabilir.</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<tr>
+<td><p>MDBF fakülte dersleri için <a href="SU_DEGREE.p_list_courses?P_TERM=202301&P_AREA=FC_FENS&P_PROGRAM=BSEE&P_FAC=E&P_LANG=TR&P_LEVEL=UG">tıklayınız...</a></p></td>
+</tr>
+<tr>
+<td><p>SSBF fakülte dersleri için <a href="SU_DEGREE.p_list_courses?P_TERM=202301&P_AREA=FC_FASS&P_PROGRAM=BSEE&P_FAC=S&P_LANG=TR&P_LEVEL=UG">tıklayınız...</a></p></td>
+</tr>
+<tr>
+<td><p>YBF fakülte dersleri için <a href="SU_DEGREE.p_list_courses?P_TERM=202301&P_AREA=FC_SOM&P_PROGRAM=BSEE&P_FAC=M&P_LANG=TR&P_LEVEL=UG">tıklayınız...</a></p></td>
+</tr>
+</td>
+</tr>
+<tr class="t_kategori_row">
+<td>
+<!-- tablo 4 ac -->
+<table  class="t_kategori">
+<tr>
+<div style="height:20;clear:both">&nbsp;</div>
+<td>
+<p><a name="ENG_SCIE"></a><b>Mühendislik</b></p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="t_kategori_row_desc">
+<td>
+<!-- tablo 5 ac -->
+<table >
+<tr>
+<td>
+<p>Öğrencilerin,
+en az 90 AKTS Mühendislik
+kredisini tamamlaması gerekmektedir.
+Mühendislik kredi yükümlülükleri,
+program yükümlülükleri tamamlanırken
+alınan derslerle tamamlanabilir. </p>
+<p>Derslerin
+kredi dağılımını görmek için
+<a href="https://suis.sabanciuniv.edu/prod/
+bwckctlg.p_disp_dyn_ctlg"
+>Ders Kataloğuna</a> tıklayınız.
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<!-- tablo 6 ac -->
+<table >
+</table>
+</td>
+</tr>
+<tr class="t_kategori_row">
+<td>
+<!-- tablo 4 ac -->
+<table  class="t_kategori">
+<tr>
+<div style="height:20;clear:both">&nbsp;</div>
+<td>
+<p><a name="BASIC_SCIE"></a><b>Temel Bilim</b></p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="t_kategori_row_desc">
+<td>
+<!-- tablo 5 ac -->
+<table >
+<tr>
+<td>
+<p>Öğrencilerin,
+en az 60 AKTS Temel Bilim
+kredisini tamamlaması gerekmektedir.
+Temel Bilim kredi yükümlülükleri,
+program yükümlülükleri tamamlanırken
+alınan derslerle tamamlanabilir. </p>
+<p>Derslerin
+kredi dağılımını görmek için
+<a href="https://suis.sabanciuniv.edu/prod/
+bwckctlg.p_disp_dyn_ctlg"
+>Ders Kataloğuna</a> tıklayınız.
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<!-- tablo 6 ac -->
+<table >
+</table>
+</td>
+</tr>
+</table>
+<p>* Fakulte Dersleri</p>
+<p>**Birden fazla alan yükümlülüğünde yer alan dersler mezuniyet koşulları özetinde belirtilen alan sırasına göre görüntülenmektedir. Örnegin alan seçmeli derslere de sayılabilecek çekirdek seçmeli dersler sadece çekirdek seçmeli dersler alanında göruntülenmektedir.</p>
+<p>***Lisansüstü dersler lisans programlarının alan yükümlülüklerinde olsalar bile bu listelerde görüntülenmemektedir.</p>
+<p>****Alınan derslerin mezuniyet yükümlülüklerinde hangi alana sayıldığını görmek için yükümlülük takibinin Information System - Degree Evaluation üzerinden yapılması gerekmektedir.</p>
+</body>
+</html>

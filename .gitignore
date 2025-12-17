@@ -9,5 +9,5 @@ data/user/
 transcript.txt
 *.pdf
 .streamlit
-
-# data/csv/
+fix_app.py
+app.log
