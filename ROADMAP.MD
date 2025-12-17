@@ -43,6 +43,8 @@ Eski sistemdeki statik katalog yerine, **Dinamik Birleştirme** yapılacak:
 - [x] JSON verisinin çekilmesi ve Audit Engine entegrasyonu.
 - [x] Audit Engine'deki mantık hatalarının (HUM 3xx, Overlap) giderilmesi.
 - [x] Tab 1 Arayüzü.
+- [x] Tab 2 Arayüzü.
+- [x] Tab 3 Arayüzü.
 
 ## 🚧 Sırada Yapılacaklar (Action Plan)
 1.  **Data Loader Güncellemesi:** `app.py` içinde 4 dosyayı da okuyan yapı kurulacak.

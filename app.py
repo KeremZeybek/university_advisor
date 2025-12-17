@@ -82,7 +82,7 @@ except ImportError as e:
     logger.error(f"Import hatası: {e}")
     st.stop()
 try:
-    from src.utils import generate_prereq_graph # Yeni fonksiyonu import et
+    from src.utils import generate_prereq_graph 
 except ImportError:
     def generate_prereq_graph(*args): return None
 
@@ -191,7 +191,6 @@ def load_tab2_resources():
             prereq_df = pd.read_csv(prereq_path)
             prereq_df.columns = [c.strip() for c in prereq_df.columns]
             
-            # Level hesaplamasını burada yap
             if 'Level' not in prereq_df.columns and 'Course Code' in prereq_df.columns:
                 def fast_extract_level(code):
                     try: return (int(code.split()[1]) // 100) * 100
