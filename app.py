@@ -60,14 +60,28 @@ def clean_instructor_name(name_str):
 def extract_program_keywords(data):
     """
     JSON verisinden program anahtar kelimelerini (keywords) çıkarır.
-    Backend'den bağımsız olarak app.py içinde çalışması için eklendi.
+    Hiyerarşik (Faculties -> Programs) yapıyı destekler.
     """
     keywords = {}
-    if isinstance(data, dict):
-        # Format 1: { "Program": { "keywords": [...] } }
+    
+    # 1. Durum: Eski Düz Format (Backup)
+    # { "Program Adı": { "keywords": [...] } }
+    if isinstance(data, dict) and "faculties" not in data:
         for prog, info in data.items():
-            if "keywords" in info:
+            if isinstance(info, dict) and "keywords" in info:
                 keywords[prog] = info["keywords"]
+                
+    # 2. Durum: Yeni Hiyerarşik Format (undergrad_majors.json)
+    # { "faculties": [ { "programs": [ ... ] } ] }
+    elif isinstance(data, dict) and "faculties" in data:
+        for faculty in data["faculties"]:
+            for program in faculty.get("programs", []):
+                p_name = program.get("name")
+                p_kws = program.get("keywords")
+                
+                if p_name and p_kws:
+                    keywords[p_name] = p_kws
+
     return keywords
 
 def merge_keywords(*maps):
