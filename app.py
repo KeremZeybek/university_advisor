@@ -57,6 +57,40 @@ def clean_instructor_name(name_str):
             
     return ", ".join(cleaned_parts)
 
+def extract_program_keywords(data):
+    """
+    JSON verisinden program anahtar kelimelerini (keywords) çıkarır.
+    Backend'den bağımsız olarak app.py içinde çalışması için eklendi.
+    """
+    keywords = {}
+    if isinstance(data, dict):
+        # Format 1: { "Program": { "keywords": [...] } }
+        for prog, info in data.items():
+            if "keywords" in info:
+                keywords[prog] = info["keywords"]
+    return keywords
+
+def merge_keywords(*maps):
+    """Birden fazla keyword sözlüğünü (Major + Minor) birleştirir."""
+    final_map = {}
+    for m in maps:
+        final_map.update(m)
+    return final_map
+
+def normalize_keywords(keywords):
+    """
+    Kullanıcının verdiği keywordleri set formatına çevirir.
+    (Recommender'dan alındı, arayüz için buraya eklendi)
+    """
+    if isinstance(keywords, dict):
+        return set(kw.lower() for kw in keywords.keys())
+    elif isinstance(keywords, (list, tuple)):
+        return set(str(kw).lower() for kw in keywords)
+    elif isinstance(keywords, str):
+        return set(keywords.lower().split())
+    else:
+        return set()
+
 # -----------------------------------------------------------------------------
 # 1. PATH VE IMPORT AYARLARI
 # -----------------------------------------------------------------------------
@@ -67,12 +101,7 @@ if SRC_DIR not in sys.path:
 
 try:
     from src.audit_engine import run_fens_audit
-    from src.recommender import get_recommendations_with_stats, normalize_keywords
-    try:
-        from src.utils import extract_program_keywords, merge_keywords
-    except ImportError:
-        def extract_program_keywords(data): return {}
-        def merge_keywords(*args): return {}
+    from src.recommender import get_recommendations_with_stats
     
     logger.info("Tüm modüller başarıyla yüklendi.")
 
@@ -147,12 +176,11 @@ def load_data():
     logger.info(f"DataFrame oluşturuldu: {len(df)} benzersiz ders")
     return data, df
 
-
 @st.cache_data(ttl=3600)
 def load_tab2_resources():
     logger.info("Tab 2 kaynakları yükleniyor ve optimize ediliyor...")
     
-    # 1. SCHEDULE
+    # 1. SCHEDULE (DERS PROGRAMI)
     sched_path = os.path.join(ROOT_DIR, 'data', 'csv', 'active_schedule_master.csv')
     sched_df = pd.DataFrame()
     
@@ -163,12 +191,13 @@ def load_tab2_resources():
             
             # --- OPTİMİZASYON 1: Hoca Temizliği ---
             if 'Instructor' in sched_df.columns:
-                # Regex'li fonksiyonu kullanıyoruz
                 sched_df['Instructor'] = sched_df['Instructor'].apply(clean_instructor_name)
                 
-            # --- OPTİMİZASYON 2: Gün Düzeltme ---
-            if 'Days' in sched_df.columns: sched_df = sched_df.rename(columns={'Days': 'Day'})
+            # --- OPTİMİZASYON 2: Gün Düzeltme ve Türkçeleştirme ---
+            if 'Days' in sched_df.columns: 
+                sched_df = sched_df.rename(columns={'Days': 'Day'})
             
+            # [ESKİ KODDAN KORUNAN KISIM]: Günleri Türkçeleştir
             day_map = {'M': 'Pazartesi', 'T': 'Salı', 'W': 'Çarşamba', 'R': 'Perşembe', 'F': 'Cuma'}
             if 'Day' in sched_df.columns:
                 for code, name in day_map.items():
@@ -182,7 +211,7 @@ def load_tab2_resources():
         except Exception as e:
             logger.warning(f"Schedule yükleme hatası: {e}")
 
-    # 2. PREREQUISITES (Ön Koşullar)
+    # 2. PREREQUISITES (ÖN KOŞULLAR)
     prereq_path = os.path.join(ROOT_DIR, 'data', 'csv', 'course_data_clean.csv')
     prereq_df = pd.DataFrame()
     
@@ -191,6 +220,7 @@ def load_tab2_resources():
             prereq_df = pd.read_csv(prereq_path)
             prereq_df.columns = [c.strip() for c in prereq_df.columns]
             
+            # Level hesaplama (Lambda hatasını önlemek için güvenli yöntem)
             if 'Level' not in prereq_df.columns and 'Course Code' in prereq_df.columns:
                 def fast_extract_level(code):
                     try: return (int(code.split()[1]) // 100) * 100
@@ -201,24 +231,38 @@ def load_tab2_resources():
         except Exception as e:
             logger.warning(f"Prerequisite yükleme hatası: {e}")
 
-    # 3. KEYWORDS (Değişmedi)
+    # 3. KEYWORDS (YENİLENEN GÜVENLİ KISIM)
     kws = {}
+    m_path = os.path.join(ROOT_DIR, 'data', 'json', 'undergrad_majors.json')
+    mi_path = os.path.join(ROOT_DIR, 'data', 'json', 'undergrad_minors.json')
+    
     try:
-        # (Keyword yükleme kodları aynı kalabilir...)
-        m_path = os.path.join(ROOT_DIR, 'data', 'json', 'undergrad_majors.json')
         if os.path.exists(m_path):
             with open(m_path, 'r', encoding='utf-8') as f: 
                 kws.update(extract_program_keywords(json.load(f)))
                 
-        mi_path = os.path.join(ROOT_DIR, 'data', 'json', 'undergrad_minors.json')
         if os.path.exists(mi_path):
             with open(mi_path, 'r', encoding='utf-8') as f: 
                 kws.update(extract_program_keywords(json.load(f)))
     except Exception as e:
-        logger.warning(f"Keyword yükleme hatası: {e}")
+        logger.warning(f"Keyword dosyası okuma hatası: {e}")
+
+    # [YENİ EKLENEN KISIM]: Eğer dosya yoksa/boşsa uygulama çökmesin diye varsayılanlar
+    if not kws:
+        logger.info("⚠️ JSON verisi bulunamadı, varsayılan keyword listesi devreye giriyor.")
+        kws = {
+            "Computer Science & Eng": ["software", "algorithm", "data", "ai", "network", "security"],
+            "Electronics Engineering": ["circuit", "signal", "electronics", "communication", "fpga"],
+            "Industrial Engineering": ["optimization", "supply chain", "production", "system", "stochastic"],
+            "Mechatronics Engineering": ["robotics", "control", "mechanical", "automation"],
+            "Molecular Biology": ["genetics", "cell", "protein", "bioinformatics"],
+            "Economics": ["macroeconomics", "microeconomics", "finance", "policy", "econometrics"],
+            "Psychology": ["cognitive", "behavioral", "social", "clinical", "developmental"],
+            "General Engineering": ["science", "engineering", "math", "physics"]
+        }
 
     return sched_df, prereq_df, kws
-
+          
 
 # Verileri Yükle
 logger.info("="*70)
